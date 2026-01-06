@@ -1,0 +1,42 @@
+name: scrape-semesterbeitrag
+
+on:
+  schedule:
+    - cron: '0 0 * * *'  # täglich um 00:00 UTC
+  workflow_dispatch: {}
+
+jobs:
+  scrape:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: python -m pip install --upgrade pip && pip install -r requirements.txt
+
+      - name: Run scraper
+        run: python scraper/scrape_semesterbeitrag.py
+
+      - name: Generate plot image
+        run: python main.py
+
+      - name: Commit changed data and image
+        run: |
+          git status --porcelain
+          if [ -n "$(git status --porcelain)" ]; then
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git add data/*.json data/*.png
+            git commit -m "chore(scrape): update semesterbeitrag data + plot [skip ci]" || echo "nothing to commit"
+            git push
+          else
+            echo "no changes to commit"
+          fi
