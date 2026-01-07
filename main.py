@@ -26,6 +26,30 @@ def safe_num(v):
         except:
             return None
 
+# --- NEU: Normalisierung von Komponenten-Namen ---
+def normalize_name(name: str) -> str:
+    if not name:
+        return name
+    n = name.strip().lower()
+    # Synonyme für Semesterticket / RMV zusammenfassen
+    if "rmv" in n or "öpnv" in n or "semesterticket" in n or "bundesweit" in n:
+        return "Semesterticket"
+    # Leihfahrradsystem / Call a bike vereinheitlichen
+    if "call a bike" in n or "leihfahrradsystem" in n:
+        return "Leihfahrradsystem"
+    # Verwaltungskostenbeitrag mit/ohne * vereinheitlichen
+    if "verwaltungskosten" in n:
+        return "Verwaltungskostenbeitrag"
+    # Studierendenschaft / Studierendenwerksbeitrag etc.
+    if "studierendenwerks" in n:
+        return "Studierendenwerksbeitrag"
+    if "studierendenschaft" in n:
+        return "Studierendenschaftsbeitrag"
+    if "kulturticket" in n:
+        return "Kulturticket"
+    # Standard: trim und Title-Case
+    return name.strip()
+
 def load_entries():
     entries = []
     if os.path.exists(HISTORY_PATH):
@@ -52,7 +76,17 @@ def build_table(entries):
     if entries:
         latest = entries[-1]
         if latest.get("items"):
-            components_order = [it.get("name") for it in latest["items"] if it.get("name")]
+            seen = set()
+            ordered = []
+            for it in latest["items"]:
+                nm = it.get("name")
+                if not nm:
+                    continue
+                can = normalize_name(nm)
+                if can not in seen:
+                    seen.add(can)
+                    ordered.append(can)
+            components_order = ordered
     # fallback: build union of components
     all_names = set()
     for e in entries:
@@ -61,9 +95,22 @@ def build_table(entries):
         comp_map = {}
         for it in e.get("items", []):
             n = it.get("name")
-            v = it.get("value") if "value" in it else it.get("amount")
-            comp_map[n] = safe_num(v)
-            all_names.add(n)
+            # value extraction and normalization
+            v_raw = it.get("value") if "value" in it else it.get("amount")
+            v = safe_num(v_raw)
+            canonical = normalize_name(n)
+            # Falls mehrere Einträge im selben Semester nach Normalisierung zusammenfallen -> aufsummieren
+            if v is None:
+                # markiere als fehlend, wenn noch kein Wert gesetzt ist
+                if canonical not in comp_map:
+                    comp_map[canonical] = None
+            else:
+                prev = comp_map.get(canonical)
+                if prev is None:
+                    comp_map[canonical] = v
+                else:
+                    comp_map[canonical] = prev + v
+            all_names.add(canonical)
         rows.append({"label": name, "comps": comp_map, "raw": e})
     if not components_order:
         components_order = sorted([n for n in all_names if n], key=lambda x: x.lower())
@@ -74,18 +121,25 @@ def totals_and_stacks(labels, rows, components_order):
     totals = []
     missing_flags = []
     for r in rows:
-        comps = r["comps"]
-        vals = []
+        comps = r["comps"]  # enthält nur Komponenten, die in diesem Eintrag gelistet wurden
         missing = False
         total = 0.0
-        # compute total: if any component missing -> mark missing
+        # Für jede Komponente: wenn sie in diesem Eintrag vorhanden ist und einen Wert hat -> addieren.
+        # Wenn die Komponente in diesem Eintrag vorhanden ist, aber keinen Wert (None) -> markieren als missing.
+        # Wenn die Komponente in diesem Eintrag nicht vorkommt -> als 0.0 behandeln (nicht missing).
         for c in components_order:
-            v = comps.get(c)
-            if v is None:
-                missing = True
+            if c in comps:
+                v = comps[c]
+                if v is None:
+                    # explizit vorhanden, aber kein Wert -> fehlend
+                    missing = True
+                    stack_values[c].append(0.0)
+                else:
+                    total += v
+                    stack_values[c].append(v)
             else:
-                total += v
-            stack_values[c].append(v if v is not None else 0.0)
+                # Komponente nicht gelistet -> historisch nicht vorhanden, also 0
+                stack_values[c].append(0.0)
         totals.append(total if not missing else None)
         missing_flags.append(missing)
     return totals, stack_values, missing_flags
@@ -110,14 +164,37 @@ def plot_and_save(labels, totals, stack_values, components_order, missing_flags)
         ax.bar(x, vals, bottom=bottom, color=color, label=comp, edgecolor='white', width=0.7)
         bottom = [bottom[i] + vals[i] for i in range(len(bottom))]
 
-    # annotate totals or placeholder
+    # ensure y-limits leave space for annotations
+    top_value = max(max(bottom) if bottom else 0.0, max_known)
+    ax.set_ylim(0, top_value * 1.12)
+
+    # annotate totals or placeholder (mit lesbarem Hintergrund)
     for i, lbl in enumerate(labels):
         if totals[i] is not None:
-            ax.text(i, totals[i] + max_known * 0.02, f"{totals[i]:.2f} €", ha="center", va="bottom", fontsize=8)
+            ax.text(
+                i,
+                totals[i] + top_value * 0.02,
+                f"{totals[i]:.2f} €",
+                ha="center",
+                va="bottom",
+                fontsize=8,
+                zorder=11,
+                bbox={"facecolor": "white", "alpha": 0.75, "pad": 1, "edgecolor": "none"},
+            )
         else:
-            placeholder_height = max_known * 0.03
-            ax.bar(i, placeholder_height, color="#eeeeee", edgecolor="#999999", hatch='//', width=0.7)
-            ax.text(i, placeholder_height + max_known * 0.02, "n.a.", ha="center", va="bottom", fontsize=8, color="#555555")
+            placeholder_height = top_value * 0.03
+            ax.bar(i, placeholder_height, color="#eeeeee", edgecolor="#999999", hatch='//', width=0.7, zorder=5)
+            ax.text(
+                i,
+                placeholder_height + top_value * 0.02,
+                "n.a.",
+                ha="center",
+                va="bottom",
+                fontsize=8,
+                color="#333333",
+                zorder=11,
+                bbox={"facecolor": "white", "alpha": 0.75, "pad": 1, "edgecolor": "none"},
+            )
 
     ax.set_xticks(x)
     ax.set_xticklabels(labels, rotation=25, ha="right", fontsize=8)
