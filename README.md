@@ -4,15 +4,14 @@
 
 Kurzbeschreibung
 - Dieses Repo scrapt automatisch die Seite der Hochschule Darmstadt (Semesterbeitrag) und speichert:
-  - data/latest.json — zuletzt gefundene Werte
-  - data/<semester-slug>.json — pro Semester
-  - data/history.json — Zeitreihe
+  - data/history.json — Zeitreihe (wichtigste Datei)
+  - data/latest.json — Komfort (wird nur aktualisiert, wenn sich Inhalt ändert)
+  - data/<semester-slug>.json — pro Semester (Komfort, wird nur angelegt/überschrieben bei Änderung)
   - data/semester_plot.png — generierte Visualisierung
 
-CI / GitHub Actions
-- Workflow: .github/workflows/scrape.yml
-- Läuft täglich (cron) und kann manuell gestartet werden.
-- Bei Änderung werden data/*.json und data/*.png committet und in den Repo gepusht.
+Wichtiges Verhalten
+- Pipeline läuft monatlich (cron) und ist manuell triggerbar.
+- Commit im Repo erfolgt nur, wenn sich tatsächliche Daten geändert haben (history/ per-semester/ latest werden nur bei relevantem Unterschied geschrieben). Dadurch werden unnötige Commits vermieden.
 
 Lokal ausführen
 1. Python 3.11, Abhängigkeiten installieren:
@@ -28,4 +27,3 @@ Hinweis zur Darstellung
 
 Lizenz & Haftung
 - Nur ein persönliches Projekt; bitte respektiere die Nutzungsbedingungen der Zielseite beim Scrapen.
-

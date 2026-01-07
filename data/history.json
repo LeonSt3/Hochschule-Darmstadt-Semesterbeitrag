@@ -1,0 +1,908 @@
+[
+  {
+    "fehlt": "SoSe2008"
+  },
+  {
+    "fehlt": "WiSe2008/2009"
+  },
+  {
+    "fehlt": "SoSe2009"
+  },
+  {
+    "fehlt": "WiSe2009/2010"
+  },
+  {
+    "fehlt": "SoSe2010"
+  },
+  {
+    "fehlt": "WiSe2010/2011"
+  },
+  {
+    "fehlt": "SoSe2011"
+  },
+  {
+    "fehlt": "WiSe2011/2012"
+  },
+  {
+    "fehlt": "SoSe2012"
+  },
+  {
+    "fehlt": "WiSe2012/2013"
+  },
+  {
+    "fehlt": "SoSe2013"
+  },
+  {
+    "source": "https://web.archive.org/web/20130925122409/http://www.h-da.de/studium/studienorganisation/semesterbeitrag",
+    "fetched_at": "",
+    "semester": "Wintersemester 2013/2014",
+    "total": "Wintersemester 2013/2014: 253,00 €",
+    "total_value": 253.0,
+    "items": [
+      {
+        "name": "Studierendenwerksbeitrag",
+        "amount": "80,00 €",
+        "value": 80.0
+      },
+      {
+        "name": "Studierendenschaftsbeitrag",
+        "amount": "13,00 €",
+        "value": 13.0
+      },
+      {
+        "name": "ÖPNV-Semesterticket",
+        "amount": "110,00 €",
+        "value": 110.0
+      },
+      {
+        "name": "Verwaltungskostenbeitrag",
+        "amount": "50,00 €",
+        "value": 50.0
+      }
+    ]
+  },
+  {
+    "source": "https://web.archive.org/web/20140330222444/https://www.h-da.de/studium/studienorganisation/semesterbeitrag/",
+    "fetched_at": "2014-03-30T22:24:44Z",
+    "semester": "Sommersemester 2014",
+    "total": "Sommersemester 2014: 256,00 €",
+    "total_value": 256.0,
+    "items": [
+      {
+        "name": "Studierendenwerksbeitrag",
+        "amount": "80,00 €",
+        "value": 80.0
+      },
+      {
+        "name": "Studierendenschaftsbeitrag",
+        "amount": "12,76 €",
+        "value": 12.76
+      },
+      {
+        "name": "ÖPNV-Semesterticket",
+        "amount": "113,24 €",
+        "value": 113.24
+      },
+      {
+        "name": "Verwaltungskostenbeitrag",
+        "amount": "50,00 €",
+        "value": 50.0
+      }
+    ]
+  },
+  {
+  "source": "https://web.archive.org/web/20141026031234/https://www.h-da.de/studium/studienorganisation/semesterbeitrag/",
+  "fetched_at": "2014-10-26T03:12:34Z",
+  "semester": "Wintersemester 2014/2015",
+  "total": "Wintersemester 2014/2015: 277,00 €",
+  "total_value": 277.0,
+  "items": [
+    {
+      "name": "Studierendenwerksbeitrag",
+      "amount": "80,00 €",
+      "value": 80.0
+    },
+    {
+      "name": "Studierendenschaftsbeitrag",
+      "amount": "14,89 €",
+      "value": 14.89
+    },
+    {
+      "name": "ÖPNV-Semesterticket",
+      "amount": "132,11 €",
+      "value": 132.11
+    },
+    {
+      "name": "Verwaltungskostenbeitrag",
+      "amount": "50,00 €",
+      "value": 50.0
+    }
+  ]
+},
+  {
+    "fehlt": "SoSe2015"
+  },
+  {
+    "source": "https://web.archive.org/web/20151007013403/https://www.h-da.de/studium/studienorganisation/semesterbeitrag/",
+    "fetched_at": "2015-10-07T01:34:03Z",
+    "semester": "Wintersemester 2015/2016",
+    "total": "Wintersemester 2015/2016: 262,00 €",
+    "total_value": 262.0,
+    "items": [
+      {
+        "name": "Studierendenwerksbeitrag",
+        "amount": "80,00 €",
+        "value": 80.0
+      },
+      {
+        "name": "Studierendenschaftsbeitrag",
+        "amount": "13,01 €",
+        "value": 13.01
+      },
+      {
+        "name": "RMV-Semesterticket",
+        "amount": "116,61 €",
+        "value": 116.61
+      },
+      {
+        "name": "Call a bike",
+        "amount": "2,38 €",
+        "value": 2.38
+      },
+      {
+        "name": "Verwaltungskostenbeitrag",
+        "amount": "50,00 €",
+        "value": 50.0
+      }
+    ]
+  },
+  {
+  "source": "https://web.archive.org/web/20160322194011/https://www.h-da.de/studium/studienorganisation/semesterbeitrag/",
+  "fetched_at": "2016-03-22T19:40:11Z",
+  "semester": "Sommersemester 2016",
+  "total": "Sommersemester 2016: 264,00 €",
+  "total_value": 264.0,
+  "items": [
+    {
+      "name": "Studierendenwerksbeitrag",
+      "amount": "80,00 €",
+      "value": 80.0
+    },
+    {
+      "name": "Studierendenschaftsbeitrag",
+      "amount": "12,74 €",
+      "value": 12.74
+    },
+    {
+      "name": "RMV-Semesterticket",
+      "amount": "118,88 €",
+      "value": 118.88
+    },
+    {
+      "name": "Call a bike",
+      "amount": "2,38 €",
+      "value": 2.38
+    },
+    {
+      "name": "Verwaltungskostenbeitrag",
+      "amount": "50,00 €",
+      "value": 50.0
+    }
+  ]
+},
+  {
+    "source": "https://web.archive.org/web/20160810084706/https://www.h-da.de/studium/studienorganisation/semesterbeitrag/",
+    "fetched_at": "2016-10-01T00:00:00Z",
+    "semester": "Wintersemester 2016/2017",
+    "total": "Wintersemester 2016/2017: 264,00 €",
+    "total_value": 264.0,
+    "items": [
+      {
+        "name": "Studierendenwerksbeitrag",
+        "amount": "80,00 €",
+        "value": 80.0
+      },
+      {
+        "name": "Studierendenschaftsbeitrag",
+        "amount": "12,74 €",
+        "value": 12.74
+      },
+      {
+        "name": "RMV-Semesterticket",
+        "amount": "118,88 €",
+        "value": 118.88
+      },
+      {
+        "name": "Call a bike",
+        "amount": "2,38 €",
+        "value": 2.38
+      },
+      {
+        "name": "Verwaltungskostenbeitrag",
+        "amount": "50,00 €",
+        "value": 50.0
+      }
+    ]
+  },
+  {
+    "source": "https://h-da.de/fileadmin/h_da/Studium/Studienorganisation/Dokumente/UEbersicht_der_Semesterbeitraege_HP.pdf",
+    "fetched_at": "2018-10-01T00:00:00Z",
+    "semester": "Sommersemester 2017",
+    "total": "Wintersemester 2017: 266,00 €",
+    "total_value": 266.0,
+    "items": [
+      {
+        "name": "Studierendenwerksbeitrag",
+        "amount": "80,00 €",
+        "value": 80.0
+      },
+      {
+        "name": "Studierendenschaftsbeitrag",
+        "amount": "12,63 €",
+        "value": 12.63
+      },
+      {
+        "name": "RMV-Semesterticket",
+        "amount": "120,99 €",
+        "value": 120.99
+      },
+      {
+        "name": "Call a bike",
+        "amount": "2,38 €",
+        "value": 2.38
+      },
+      {
+        "name": "Verwaltungskostenbeitrag",
+        "amount": "50,00 €",
+        "value": 50.0
+      }
+    ]
+  },
+  {
+    "source": "https://web.archive.org/web/20170707063301/https://www.h-da.de/studium/studienorganisation/semesterbeitrag/",
+    "fetched_at": "2018-10-01T00:00:00Z",
+    "semester": "Wintersemester 2017/2018",
+    "total": "Wintersemester 2017/2018: 266,00 €",
+    "total_value": 266.0,
+    "items": [
+      {
+        "name": "Studierendenwerksbeitrag",
+        "amount": "80,00 €",
+        "value": 80.0
+      },
+      {
+        "name": "Studierendenschaftsbeitrag",
+        "amount": "12,63 €",
+        "value": 12.63
+      },
+      {
+        "name": "RMV-Semesterticket",
+        "amount": "120,99 €",
+        "value": 120.99
+      },
+      {
+        "name": "Call a bike",
+        "amount": "2,38 €",
+        "value": 2.38
+      },
+      {
+        "name": "Verwaltungskostenbeitrag",
+        "amount": "50,00 €",
+        "value": 50.0
+      }
+    ]
+  },
+  {
+    "source": "https://h-da.de/fileadmin/h_da/Studium/Studienorganisation/Dokumente/UEbersicht_der_Semesterbeitraege_HP.pdf",
+    "fetched_at": "",
+    "semester": "Sommersemester 2018",
+    "total": "Sommersemester 2018: 267 €",
+    "total_value": 267.0,
+    "items": [
+      {
+        "name": "Studierendenwerksbeitrag",
+        "amount": "80,00 €",
+        "value": 80.0
+      },
+      {
+        "name": "Studierendenschaftsbeitrag",
+        "amount": "12,11 €",
+        "value": 12.11
+      },
+      {
+        "name": "RMV-Semesterticket",
+        "amount": "123,39 €",
+        "value": 123.39
+      },
+      {
+        "name": "Leihfahrradsystem",
+        "amount": "1,50 €",
+        "value": 1.5
+      },
+      {
+        "name": "Verwaltungskostenbeitrag",
+        "amount": "50,00 €",
+        "value": 50.0
+      }
+    ]
+  },
+  {
+    "source": "https://h-da.de/fileadmin/h_da/Studium/Studienorganisation/Dokumente/UEbersicht_der_Semesterbeitraege_HP.pdf",
+    "fetched_at": "2019-04-12T13:21:46Z",
+    "semester": "Wintersemester 2018/2019",
+    "total": "Wintersemester 2018/2019: 267 €",
+    "total_value": 267.0,
+    "items": [
+      {
+        "name": "Studierendenwerksbeitrag",
+        "amount": "80,00 €",
+        "value": 80.0
+      },
+      {
+        "name": "Studierendenschaftsbeitrag",
+        "amount": "12,11 €",
+        "value": 12.11
+      },
+      {
+        "name": "RMV-Semesterticket",
+        "amount": "123,39 €",
+        "value": 123.39
+      },
+      {
+        "name": "Leihfahrradsystem",
+        "amount": "1,50 €",
+        "value": 1.5
+      },
+      {
+        "name": "Verwaltungskostenbeitrag",
+        "amount": "50,00 €",
+        "value": 50.0
+      }
+    ]
+  },
+  {
+    "source": "https://web.archive.org/web/20190412132146/https://h-da.de/studium/studienorganisation/semesterbeitrag/",
+    "fetched_at": "2019-04-12T13:21:46Z",
+    "semester": "Sommersemester 2019",
+    "total": "Sommersemester 2019: 267 €",
+    "total_value": 267.0,
+    "items": [
+      {
+        "name": "Studierendenwerksbeitrag",
+        "amount": "80,00 €",
+        "value": 80.0
+      },
+      {
+        "name": "Studierendenschaftsbeitrag",
+        "amount": "12,11 €",
+        "value": 12.11
+      },
+      {
+        "name": "RMV-Semesterticket",
+        "amount": "123,39 €",
+        "value": 123.39
+      },
+      {
+        "name": "Leihfahrradsystem",
+        "amount": "1,50 €",
+        "value": 1.5
+      },
+      {
+        "name": "Verwaltungskostenbeitrag",
+        "amount": "50,00 €",
+        "value": 50.0
+      }
+    ]
+  },
+  {
+    "source": "https://web.archive.org/web/20191015235826/https://www.h-da.de/studium/studienorganisation/semesterbeitrag/",
+    "fetched_at": "2019-10-01T00:00:00Z",
+    "semester": "Wintersemester 2019/2020",
+    "total": "Wintersemester 2019/2020: 267 €",
+    "total_value": 267.0,
+    "items": [
+      {
+        "name": "Studierendenwerksbeitrag",
+        "amount": "80,00 €",
+        "value": 80.0
+      },
+      {
+        "name": "Studierendenschaftsbeitrag",
+        "amount": "12,11 €",
+        "value": 12.11
+      },
+      {
+        "name": "RMV-Semesterticket",
+        "amount": "123,39 €",
+        "value": 123.39
+      },
+      {
+        "name": "Leihfahrradsystem",
+        "amount": "1,50 €",
+        "value": 1.5
+      },
+      {
+        "name": "Verwaltungskostenbeitrag",
+        "amount": "50,00 €",
+        "value": 50.0
+      }
+    ]
+  },
+  {
+    "source": "https://web.archive.org/web/20200408094235/https://h-da.de/studium/studienorganisation/semesterbeitrag/",
+    "fetched_at": "2020-04-01T00:00:00Z",
+    "semester": "Sommersemester 2020",
+    "total": "Sommersemester 2020: 269 €",
+    "total_value": 269.0,
+    "items": [
+      {
+        "name": "Studierendenwerksbeitrag",
+        "amount": "80,00 €",
+        "value": 80.0
+      },
+      {
+        "name": "Studierendenschaftsbeitrag",
+        "amount": "12,28 €",
+        "value": 12.28
+      },
+      {
+        "name": "RMV-Semesterticket",
+        "amount": "125,22 €",
+        "value": 125.22
+      },
+      {
+        "name": "Leihfahrradsystem",
+        "amount": "1,50 €",
+        "value": 1.5
+      },
+      {
+        "name": "Verwaltungskostenbeitrag",
+        "amount": "50,00 €",
+        "value": 50.0
+      }
+    ]
+  },
+  {
+    "source": "https://web.archive.org/web/20200804165516/https://h-da.de/studium/studienorganisation/semesterbeitrag/",
+    "fetched_at": "2020-08-04T16:55:16Z",
+    "semester": "Wintersemester 2020/2021",
+    "total": "Wintersemester 2020/2021: 269 €",
+    "total_value": 269.0,
+    "items": [
+      {
+        "name": "Studierendenwerksbeitrag",
+        "amount": "80,00 €",
+        "value": 80.0
+      },
+      {
+        "name": "Studierendenschaftsbeitrag",
+        "amount": "12,28 €",
+        "value": 12.28
+      },
+      {
+        "name": "Verwaltungskostenbeitrag",
+        "amount": "50,00 €",
+        "value": 50.0
+      },
+      {
+        "name": "RMV-Semesterticket",
+        "amount": "125,22 €",
+        "value": 125.22
+      },
+      {
+        "name": "Leihfahrradsystem",
+        "amount": "1,50 €",
+        "value": 1.5
+      }
+    ]
+  },
+  {
+    "source": "https://web.archive.org/web/20210419062823/https://h-da.de/studium/studienorganisation/semesterbeitrag",
+    "fetched_at": "2021-04-19T06:28:23Z",
+    "semester": "Sommersemester 2021",
+    "total": "Sommersemester 2021: 269 €",
+    "total_value": 269.0,
+    "items": [
+      {
+        "name": "Studierendenwerksbeitrag",
+        "amount": "80,00 €",
+        "value": 80.0
+      },
+      {
+        "name": "Studierendenschaftsbeitrag",
+        "amount": "12,28 €",
+        "value": 12.28
+      },
+      {
+        "name": "Verwaltungskostenbeitrag",
+        "amount": "50,00 €",
+        "value": 50.0
+      },
+      {
+        "name": "RMV-Semesterticket",
+        "amount": "125,22 €",
+        "value": 125.22
+      },
+      {
+        "name": "Leihfahrradsystem",
+        "amount": "1,50 €",
+        "value": 1.5
+      }
+    ]
+  },
+  {
+    "source": "https://web.archive.org/web/20210813171224/https://h-da.de/studium/studienorganisation/semesterbeitrag",
+    "fetched_at": "2021-08-13T17:12:24Z",
+    "semester": "Wintersemester 2021/2022",
+    "total": "Wintersemester 2021/2022: 269 €",
+    "total_value": 269.0,
+    "items": [
+      {
+        "name": "Studierendenwerksbeitrag",
+        "amount": "80,00 €",
+        "value": 80.0
+      },
+      {
+        "name": "Studierendenschaftsbeitrag",
+        "amount": "12,28 €",
+        "value": 12.28
+      },
+      {
+        "name": "Verwaltungskostenbeitrag",
+        "amount": "50,00 €",
+        "value": 50.0
+      },
+      {
+        "name": "RMV-Semesterticket",
+        "amount": "125,22 €",
+        "value": 125.22
+      },
+      {
+        "name": "Leihfahrradsystem",
+        "amount": "1,50 €",
+        "value": 1.5
+      }
+    ]
+  },
+  {
+  "source": "https://web.archive.org/web/20220127213004/https://h-da.de/studium/studienorganisation/semesterbeitrag",
+  "fetched_at": "2022-01-27T21:30:04Z",
+  "semester": "Sommersemester 2022",
+  "total": "Sommersemester 2022: 272 €",
+  "total_value": 272.0,
+  "items": [
+    {
+      "name": "Studierendenwerksbeitrag",
+      "amount": "80,00 €",
+      "value": 80.0
+    },
+    {
+      "name": "Studierendenschaftsbeitrag",
+      "amount": "11,51 €",
+      "value": 11.51
+    },
+    {
+      "name": "Verwaltungskostenbeitrag",
+      "amount": "50,00 €",
+      "value": 50.0
+    },
+    {
+      "name": "RMV-Semesterticket",
+      "amount": "128,99 €",
+      "value": 128.99
+    },
+    {
+      "name": "Leihfahrradsystem",
+      "amount": "1,50 €",
+      "value": 1.5
+    }
+  ]
+},
+  {
+  "source": "https://web.archive.org/web/20221019050007/https://h-da.de/studium/studienorganisation/semesterbeitrag",
+  "fetched_at": "2022-10-19T05:00:07Z",
+  "semester": "Wintersemester 2022/2023",
+  "total": "Wintersemester 2022/2023: 272 €",
+  "total_value": 272.0,
+  "items": [
+    {
+      "name": "Studierendenwerksbeitrag",
+      "amount": "80,00 €",
+      "value": 80.0
+    },
+    {
+      "name": "Studierendenschaftsbeitrag",
+      "amount": "11,51 €",
+      "value": 11.51
+    },
+    {
+      "name": "Verwaltungskostenbeitrag",
+      "amount": "50,00 €",
+      "value": 50.0
+    },
+    {
+      "name": "RMV-Semesterticket",
+      "amount": "128,99 €",
+      "value": 128.99
+    },
+    {
+      "name": "Leihfahrradsystem",
+      "amount": "1,50 €",
+      "value": 1.5
+    }
+  ]
+},
+  {
+  "source": "https://h-da.de/fileadmin/h_da/Studium/Studienorganisation/Dokumente/UEbersicht_der_Semesterbeitraege_HP.pdf",
+  "fetched_at": "",
+  "semester": "Sommersemester 2023",
+  "total": "Wintersemester 2023: 292 € *Der Verwaltungskostenbeitrag ist für Austauschstudierende nicht fällig.",
+  "total_value": 292.0,
+  "items": [
+    {
+      "name": "Studierendenwerksbeitrag",
+      "amount": "93,00 €",
+      "value": 93.0
+    },
+    {
+      "name": "Kulturticket",
+      "amount": "2,72 €",
+      "value": 2.72
+    },
+    {
+      "name": "Studierendenschaftsbeitrag",
+      "amount": "8,67 €",
+      "value": 8.67
+    },
+    {
+      "name": "Verwaltungskostenbeitrag*",
+      "amount": "50,00 €",
+      "value": 50.0
+    },
+    {
+      "name": "RMV-Semesterticket",
+      "amount": "135,23 €",
+      "value": 135.23
+    },
+    {
+      "name": "Leihfahrradsystem",
+      "amount": "2,38 €",
+      "value": 2.38
+    }
+  ]
+},
+  {
+  "source": "https://web.archive.org/web/20231128111131/https://h-da.de/studium/studienorganisation/semesterbeitrag",
+  "fetched_at": "2023-11-28T11:11:31Z",
+  "semester": "Wintersemester 2023/24",
+  "total": "Wintersemester 2023/24: 292 € *Der Verwaltungskostenbeitrag ist für Austauschstudierende nicht fällig.",
+  "total_value": 292.0,
+  "items": [
+    {
+      "name": "Studierendenwerksbeitrag",
+      "amount": "93,00 €",
+      "value": 93.0
+    },
+    {
+      "name": "Kulturticket",
+      "amount": "2,72 €",
+      "value": 2.72
+    },
+    {
+      "name": "Studierendenschaftsbeitrag",
+      "amount": "8,67 €",
+      "value": 8.67
+    },
+    {
+      "name": "Verwaltungskostenbeitrag*",
+      "amount": "50,00 €",
+      "value": 50.0
+    },
+    {
+      "name": "RMV-Semesterticket",
+      "amount": "135,23 €",
+      "value": 135.23
+    },
+    {
+      "name": "Leihfahrradsystem",
+      "amount": "2,38 €",
+      "value": 2.38
+    }
+  ]
+},
+  {
+  "source": "https://web.archive.org/web/20240224192313/https://h-da.de/studium/studienorganisation/semesterbeitrag/",
+  "fetched_at": "2024-02-24T19:23:13Z",
+  "semester": "Sommersemester 2024",
+  "total": "Sommersemester 2024: 337 € *entfällt für Austauschstudierende",
+  "total_value": 337.0,
+  "items": [
+    {
+      "name": "Studierendenwerksbeitrag",
+      "amount": "93,00 €",
+      "value": 93.0
+    },
+    {
+      "name": "Kulturticket",
+      "amount": "2,72 €",
+      "value": 2.72
+    },
+    {
+      "name": "Studierendenschaftsbeitrag",
+      "amount": "12,50 €",
+      "value": 12.5
+    },
+    {
+      "name": "Verwaltungskostenbeitrag*",
+      "amount": "50,00 €",
+      "value": 50.0
+    },
+    {
+      "name": "bundesweites Semesterticket",
+      "amount": "176,40 €",
+      "value": 176.4
+    },
+    {
+      "name": "Leihfahrradsystem",
+      "amount": "2,38 €",
+      "value": 2.38
+    }
+  ]
+},
+  {
+  "source": "https://web.archive.org/web/20240811024606/https://h-da.de/studium/studienorganisation/semesterbeitrag",
+  "fetched_at": "2024-08-11T02:46:06Z",
+  "semester": "Wintersemester 2024/25",
+  "total": "Wintersemester 2024/25: 339 € *entfällt für Austauschstudierende",
+  "total_value": 339.0,
+  "items": [
+    {
+      "name": "Studierendenwerksbeitrag",
+      "amount": "93,00 €",
+      "value": 93.0
+    },
+    {
+      "name": "Kulturticket",
+      "amount": "2,72 €",
+      "value": 2.72
+    },
+    {
+      "name": "Studierendenschaftsbeitrag",
+      "amount": "14,50 €",
+      "value": 14.5
+    },
+    {
+      "name": "Verwaltungskostenbeitrag*",
+      "amount": "50,00 €",
+      "value": 50.0
+    },
+    {
+      "name": "bundesweites Semesterticket",
+      "amount": "176,40 €",
+      "value": 176.4
+    },
+    {
+      "name": "Leihfahrradsystem",
+      "amount": "2,38 €",
+      "value": 2.38
+    }
+  ]
+},
+  {
+  "source": "https://web.archive.org/web/20250110103740/https://h-da.de/studium/studienorganisation/semesterbeitrag/",
+  "fetched_at": "2025-01-10T10:37:40Z",
+  "semester": "Sommersemester 2025",
+  "total": "Sommersemester 2025: 349 € *entfällt für Austauschstudierende",
+  "total_value": 349.0,
+  "items": [
+    {
+      "name": "Studierendenwerksbeitrag",
+      "amount": "103,00 €",
+      "value": 103.0
+    },
+    {
+      "name": "Kulturticket",
+      "amount": "2,71 €",
+      "value": 2.71
+    },
+    {
+      "name": "Studierendenschaftsbeitrag",
+      "amount": "14,51 €",
+      "value": 14.51
+    },
+    {
+      "name": "Verwaltungskostenbeitrag*",
+      "amount": "50,00 €",
+      "value": 50.0
+    },
+    {
+      "name": "bundesweites Semesterticket",
+      "amount": "176,40 €",
+      "value": 176.4
+    },
+    {
+      "name": "Leihfahrradsystem",
+      "amount": "2,38 €",
+      "value": 2.38
+    }
+  ]
+},
+  {
+    "source": "https://web.archive.org/web/20250521085317/https://h-da.de/studium/studienorganisation/semesterbeitrag/",
+    "fetched_at": "2025-05-21T08:53:17Z",
+    "semester": "Wintersemester 2025/2026",
+    "total": "Wintersemester 2025/2026: 382 € *entfällt für Austauschstudierende",
+    "total_value": 382.0,
+    "items": [
+      {
+        "name": "Studierendenwerksbeitrag",
+        "amount": "103,00 €",
+        "value": 103.0
+      },
+      {
+        "name": "Kulturticket",
+        "amount": "2,71 €",
+        "value": 2.71
+      },
+      {
+        "name": "Studierendenschaftsbeitrag",
+        "amount": "14,51 €",
+        "value": 14.51
+      },
+      {
+        "name": "Verwaltungskostenbeitrag*",
+        "amount": "50,00 €",
+        "value": 50.0
+      },
+      {
+        "name": "bundesweites Semesterticket",
+        "amount": "208,80 €",
+        "value": 208.8
+      },
+      {
+        "name": "Leihfahrradsystem",
+        "amount": "2,98 €",
+        "value": 2.98
+      }
+    ]
+  },
+  {
+    "source": "https://h-da.de/studium/studienorganisation/semesterbeitrag",
+    "fetched_at": "2026-01-06T23:23:03.105896Z",
+    "semester": "Sommersemester 2026",
+    "total": "Sommersemester 2026: 383 €",
+    "total_value": 383.0,
+    "items": [
+      {
+        "name": "Studierendenwerksbeitrag",
+        "amount": "103,00 €",
+        "value": 103.0
+      },
+      {
+        "name": "Kulturticket",
+        "amount": "2,71 €",
+        "value": 2.71
+      },
+      {
+        "name": "Studierendenschaftsbeitrag",
+        "amount": "15,51 €",
+        "value": 15.51
+      },
+      {
+        "name": "Verwaltungskostenbeitrag*",
+        "amount": "50,00 €",
+        "value": 50.0
+      },
+      {
+        "name": "bundesweites Semesterticket",
+        "amount": "208,80 €",
+        "value": 208.8
+      },
+      {
+        "name": "Leihfahrradsystem",
+        "amount": "2,98 €",
+        "value": 2.98
+      }
+    ]
+  }
+]

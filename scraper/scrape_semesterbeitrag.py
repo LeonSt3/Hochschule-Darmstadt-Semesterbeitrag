@@ -83,21 +83,56 @@ def slugify(text):
 
 def save(result):
     os.makedirs(OUT_DIR, exist_ok=True)
-    # latest
-    with open(LATEST_PATH, "w", encoding="utf-8") as f:
-        json.dump(result, f, ensure_ascii=False, indent=2)
 
-    # per-semester file (slugified)
+    def normalize(obj):
+        # entferne volatile Felder bevor verglichen wird
+        n = dict(obj)
+        n.pop("fetched_at", None)
+        n.pop("source", None)
+        return n
+
+    changed_any = False
+
+    # latest: nur schreiben, wenn sich relevanter Inhalt geändert hat
+    existing_latest = None
+    if os.path.exists(LATEST_PATH):
+        try:
+            with open(LATEST_PATH, "r", encoding="utf-8") as f:
+                existing_latest = json.load(f)
+        except:
+            existing_latest = None
+
+    if existing_latest is None or normalize(existing_latest) != normalize(result):
+        # schreibe latest nur wenn relevant unterschiedlich
+        try:
+            with open(LATEST_PATH, "w", encoding="utf-8") as f:
+                json.dump(result, f, ensure_ascii=False, indent=2)
+            changed_any = True
+        except Exception as e:
+            print("Fehler beim Schreiben von latest.json:", e, file=sys.stderr)
+
+    # per-semester file (slugified) — nur schreiben, wenn nicht vorhanden oder unterschiedlich
     sem_label = result.get("semester") or result.get("total") or datetime.utcnow().strftime("%Y-%m-%d")
     sem_slug = slugify(sem_label)
     per_sem_path = os.path.join(OUT_DIR, f"{sem_slug}.json")
-    try:
-        with open(per_sem_path, "w", encoding="utf-8") as f:
-            json.dump(result, f, ensure_ascii=False, indent=2)
-    except Exception as e:
-        print("Fehler beim Schreiben der Semesterdatei:", e, file=sys.stderr)
+    write_per_sem = True
+    if os.path.exists(per_sem_path):
+        try:
+            with open(per_sem_path, "r", encoding="utf-8") as f:
+                existing = json.load(f)
+            if normalize(existing) == normalize(result):
+                write_per_sem = False
+        except:
+            write_per_sem = True
+    if write_per_sem:
+        try:
+            with open(per_sem_path, "w", encoding="utf-8") as f:
+                json.dump(result, f, ensure_ascii=False, indent=2)
+            changed_any = True
+        except Exception as e:
+            print("Fehler beim Schreiben der Semesterdatei:", e, file=sys.stderr)
 
-    # history: append if different from last entry
+    # history: append only if different from last entry (wie vorher)
     history = []
     if os.path.exists(HISTORY_PATH):
         try:
@@ -105,14 +140,17 @@ def save(result):
                 history = json.load(f)
         except:
             history = []
-    # einfache deduplizierung: compare latest total and items
     last = history[-1] if history else None
-    if not last or last.get("total") != result.get("total") or last.get("items") != result.get("items"):
+    if not last or normalize(last) != normalize(result):
         history.append(result)
-        with open(HISTORY_PATH, "w", encoding="utf-8") as f:
-            json.dump(history, f, ensure_ascii=False, indent=2)
-        return True  # changed
-    return False
+        try:
+            with open(HISTORY_PATH, "w", encoding="utf-8") as f:
+                json.dump(history, f, ensure_ascii=False, indent=2)
+            changed_any = True
+        except Exception as e:
+            print("Fehler beim Schreiben von history.json:", e, file=sys.stderr)
+
+    return changed_any
 
 def main():
     try:

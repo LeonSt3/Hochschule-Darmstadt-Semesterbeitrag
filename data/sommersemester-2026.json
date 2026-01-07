@@ -1,0 +1,39 @@
+{
+  "source": "https://h-da.de/studium/studienorganisation/semesterbeitrag",
+  "fetched_at": "2026-01-06T23:23:03.105896Z",
+  "semester": "Sommersemester 2026",
+  "total": "Sommersemester 2026: 383 €",
+  "total_value": 383.0,
+  "items": [
+    {
+      "name": "Studierendenwerksbeitrag",
+      "amount": "103,00 €",
+      "value": 103.0
+    },
+    {
+      "name": "Kulturticket",
+      "amount": "2,71 €",
+      "value": 2.71
+    },
+    {
+      "name": "Studierendenschaftsbeitrag",
+      "amount": "15,51 €",
+      "value": 15.51
+    },
+    {
+      "name": "Verwaltungskostenbeitrag*",
+      "amount": "50,00 €",
+      "value": 50.0
+    },
+    {
+      "name": "bundesweites Semesterticket",
+      "amount": "208,80 €",
+      "value": 208.8
+    },
+    {
+      "name": "Leihfahrradsystem",
+      "amount": "2,98 €",
+      "value": 2.98
+    }
+  ]
+}
