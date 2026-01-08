@@ -7,8 +7,10 @@ from datetime import datetime
 
 OUT_DIR = os.path.join(os.path.dirname(__file__), "data")
 HISTORY_PATH = os.path.join(OUT_DIR, "history.json")
-LATEST_PATH = os.path.join(OUT_DIR, "latest.json")
 PNG_PATH = os.path.join(OUT_DIR, "semester_plot.png")
+
+EPSILON = 1e-9
+
 
 def safe_num(v):
     if v is None:
@@ -26,7 +28,8 @@ def safe_num(v):
         except:
             return None
 
-# --- NEU: Normalisierung von Komponenten-Namen ---
+
+# --- Normalisierung von Komponenten-Namen ---
 def normalize_name(name: str) -> str:
     if not name:
         return name
@@ -50,6 +53,7 @@ def normalize_name(name: str) -> str:
     # Standard: trim und Title-Case
     return name.strip()
 
+
 def load_entries():
     entries = []
     if os.path.exists(HISTORY_PATH):
@@ -58,14 +62,8 @@ def load_entries():
                 entries = json.load(f)
         except:
             entries = []
-    if not entries and os.path.exists(LATEST_PATH):
-        try:
-            with open(LATEST_PATH, "r", encoding="utf-8") as f:
-                latest = json.load(f)
-                entries = [latest]
-        except:
-            entries = []
     return entries
+
 
 def build_table(entries):
     # entries: list of parsed results from scraper, newest last
@@ -116,6 +114,7 @@ def build_table(entries):
         components_order = sorted([n for n in all_names if n], key=lambda x: x.lower())
     return labels, rows, components_order
 
+
 def totals_and_stacks(labels, rows, components_order):
     stack_values = {c: [] for c in components_order}
     totals = []
@@ -143,6 +142,21 @@ def totals_and_stacks(labels, rows, components_order):
         totals.append(total if not missing else None)
         missing_flags.append(missing)
     return totals, stack_values, missing_flags
+
+
+# NEU: Formatierung von Euro-Werten ohne überflüssige Nullen
+def format_euro(v):
+    if v is None:
+        return "n.a."
+    try:
+        # Wenn Wert praktisch ganzzahlig ist, ohne Nachkommastellen anzeigen
+        if abs(v - round(v)) < EPSILON:
+            return f"{int(round(v))} €"
+        # Sonst mit zwei Nachkommastellen
+        return f"{v:.2f} €"
+    except Exception:
+        return f"{v} €"
+
 
 def plot_and_save(labels, totals, stack_values, components_order, missing_flags):
     if not labels:
@@ -174,7 +188,7 @@ def plot_and_save(labels, totals, stack_values, components_order, missing_flags)
             ax.text(
                 i,
                 totals[i] + top_value * 0.02,
-                f"{totals[i]:.2f} €",
+                format_euro(totals[i]),
                 ha="center",
                 va="bottom",
                 fontsize=8,
@@ -207,11 +221,13 @@ def plot_and_save(labels, totals, stack_values, components_order, missing_flags)
     plt.close()
     print("Plot gespeichert:", PNG_PATH)
 
+
 def main():
     entries = load_entries()
     labels, rows, components_order = build_table(entries)
     totals, stack_values, missing_flags = totals_and_stacks(labels, rows, components_order)
     plot_and_save(labels, totals, stack_values, components_order, missing_flags)
+
 
 if __name__ == "__main__":
     main()

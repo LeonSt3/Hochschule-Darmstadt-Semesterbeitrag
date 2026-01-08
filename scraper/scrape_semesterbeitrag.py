@@ -9,8 +9,8 @@ import unicodedata
 
 URL = "https://h-da.de/studium/studienorganisation/semesterbeitrag"
 OUT_DIR = os.path.join(os.path.dirname(__file__), "..", "data")
-LATEST_PATH = os.path.join(OUT_DIR, "latest.json")
 HISTORY_PATH = os.path.join(OUT_DIR, "history.json")
+
 
 def clean_amount(text):
     if not text:
@@ -18,6 +18,7 @@ def clean_amount(text):
     t = text.strip()
     t = t.replace("\xa0", " ")
     return t
+
 
 def amount_to_number(text):
     if not text:
@@ -32,9 +33,11 @@ def amount_to_number(text):
     except:
         return None
 
+
 def parse(html):
     soup = BeautifulSoup(html, "html.parser")
-    result = {"source": URL, "fetched_at": datetime.utcnow().isoformat() + "Z", "semester": None, "total": None, "total_value": None, "items": []}
+    result = {"source": URL, "fetched_at": datetime.now(datetime.UTC).isoformat() + "Z", "semester": None,
+              "total": None, "total_value": None, "items": []}
 
     # Suche nach Überschrift "Betrag" und direkt folgendes h3 (z.B. "Sommersemester 2026: 383 €")
     h2 = soup.find(lambda tag: tag.name == "h2" and "Betrag" in tag.get_text())
@@ -72,6 +75,7 @@ def parse(html):
 
     return result
 
+
 def slugify(text):
     if not text:
         return "unknown"
@@ -80,6 +84,7 @@ def slugify(text):
     text = re.sub(r"[^\w\s-]", "", text).strip().lower()
     text = re.sub(r"[-\s]+", "-", text)
     return text
+
 
 def save(result):
     os.makedirs(OUT_DIR, exist_ok=True)
@@ -91,48 +96,15 @@ def save(result):
         n.pop("source", None)
         return n
 
+    def semester_key(s):
+        # einfache Normalisierung des Semester-Labels für den Vergleich
+        if not s:
+            return None
+        return str(s).strip().lower()
+
     changed_any = False
 
-    # latest: nur schreiben, wenn sich relevanter Inhalt geändert hat
-    existing_latest = None
-    if os.path.exists(LATEST_PATH):
-        try:
-            with open(LATEST_PATH, "r", encoding="utf-8") as f:
-                existing_latest = json.load(f)
-        except:
-            existing_latest = None
-
-    if existing_latest is None or normalize(existing_latest) != normalize(result):
-        # schreibe latest nur wenn relevant unterschiedlich
-        try:
-            with open(LATEST_PATH, "w", encoding="utf-8") as f:
-                json.dump(result, f, ensure_ascii=False, indent=2)
-            changed_any = True
-        except Exception as e:
-            print("Fehler beim Schreiben von latest.json:", e, file=sys.stderr)
-
-    # per-semester file (slugified) — nur schreiben, wenn nicht vorhanden oder unterschiedlich
-    sem_label = result.get("semester") or result.get("total") or datetime.utcnow().strftime("%Y-%m-%d")
-    sem_slug = slugify(sem_label)
-    per_sem_path = os.path.join(OUT_DIR, f"{sem_slug}.json")
-    write_per_sem = True
-    if os.path.exists(per_sem_path):
-        try:
-            with open(per_sem_path, "r", encoding="utf-8") as f:
-                existing = json.load(f)
-            if normalize(existing) == normalize(result):
-                write_per_sem = False
-        except:
-            write_per_sem = True
-    if write_per_sem:
-        try:
-            with open(per_sem_path, "w", encoding="utf-8") as f:
-                json.dump(result, f, ensure_ascii=False, indent=2)
-            changed_any = True
-        except Exception as e:
-            print("Fehler beim Schreiben der Semesterdatei:", e, file=sys.stderr)
-
-    # history: append only if different from last entry (wie vorher)
+    # Lade vorhandene History
     history = []
     if os.path.exists(HISTORY_PATH):
         try:
@@ -140,8 +112,34 @@ def save(result):
                 history = json.load(f)
         except:
             history = []
+
+    # Baue Set existierender Semester-Keys (nur Einträge mit 'semester')
+    existing_semesters = set()
+    for h in history:
+        sk = semester_key(h.get("semester"))
+        if sk:
+            existing_semesters.add(sk)
+
+    result_sem = semester_key(result.get("semester"))
+
+    # Wenn das Semester bereits in history existiert -> skip (keine doppelte Semester-Zeile)
+    if result_sem and result_sem in existing_semesters:
+        # Falls der letzte Eintrag exakt dieselbe fetched_at hat, behandeln wir das ebenfalls als kein append.
+        last = history[-1] if history else None
+        if last and last.get("fetched_at") == result.get("fetched_at"):
+            # bereits vollständig vorhanden
+            print("Eintrag übersprungen: Semester bereits in history (identischer fetched_at).")
+            return False
+        # Semester schon vorhanden -> nicht erneut anhängen
+        print("Eintrag übersprungen: Semester '{}' bereits in history.".format(result.get("semester")))
+        return False
+
     last = history[-1] if history else None
-    if not last or normalize(last) != normalize(result):
+
+    # Wenn es keinen letzten Eintrag gibt -> anhängen
+    # Wenn der letzte Eintrag denselben fetched_at hat -> skip
+    # Sonst das rohe Ergebnis anhängen
+    if not last or last.get("fetched_at") != result.get("fetched_at"):
         history.append(result)
         try:
             with open(HISTORY_PATH, "w", encoding="utf-8") as f:
@@ -149,8 +147,12 @@ def save(result):
             changed_any = True
         except Exception as e:
             print("Fehler beim Schreiben von history.json:", e, file=sys.stderr)
+    else:
+        # fetched_at ist identisch -> keine neue History-Zeile
+        pass
 
     return changed_any
+
 
 def main():
     try:
@@ -170,6 +172,6 @@ def main():
         print("Keine Änderung.")
         sys.exit(0)
 
+
 if __name__ == "__main__":
     main()
-
