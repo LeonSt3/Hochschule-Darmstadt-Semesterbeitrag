@@ -2,7 +2,6 @@ import os
 import json
 import re
 import matplotlib.pyplot as plt
-import itertools
 from datetime import datetime
 
 OUT_DIR = os.path.join(os.path.dirname(__file__), "data")
@@ -10,6 +9,28 @@ HISTORY_PATH = os.path.join(OUT_DIR, "history.json")
 PNG_PATH = os.path.join(OUT_DIR, "semester_plot.png")
 
 EPSILON = 1e-9
+
+COMPONENT_COLORS = {
+    # Hauptelemente mit Aufschlüsselung
+    "Semesterticket": "#f00c0c",  # rot
+    "Studierendenwerksbeitrag": "#ff7f0e",  # orange
+    "Studierendenschaftsbeitrag": "#2ca02c",  # grün
+    "Verwaltungskostenbeitrag": "#1f77b4",  # blau
+    "Leihfahrradsystem": "#9467bd",  # lila
+    "Kulturticket": "#8c564b",  # braun
+
+    # Sonstige / historische Posten
+    "Studiengebühren": "#7f7f7f",  # grau
+    "Keine Aufschlüsselung verfügbar": "#17becf",  # türkis
+}
+
+
+def get_color_for_component(name: str):
+    try:
+        return COMPONENT_COLORS[name]
+    except KeyError:
+        raise KeyError(f"Unbekannte Komponente ohne definierte Farbe: {name!r}. "
+                       f"Bitte eine Farbe in COMPONENT_COLORS hinterlegen.")  # bewusstes Abbrechen
 
 
 def safe_num(v):
@@ -100,7 +121,6 @@ def build_table(entries):
         rows.append({"label": name, "comps": comp_map, "raw": e})
 
     # Bestimme Komponentenreihenfolge anhand von Stabilität (Varianz) und Häufigkeit
-    components_order = []
     if all_names:
         total_rows = max(1, len(rows))
         stats = []
@@ -166,7 +186,7 @@ def format_euro(v):
         return f"{v} €"
 
 
-def plot_and_save(labels, totals, stack_values, components_order, missing_flags):
+def plot_and_save(labels, totals, stack_values, components_order):
     if not labels:
         print("Keine Daten zum Plotten gefunden.")
         return
@@ -176,13 +196,11 @@ def plot_and_save(labels, totals, stack_values, components_order, missing_flags)
 
     plt.figure(figsize=(max(10, len(labels) * 0.45), 6))
     ax = plt.gca()
-    colors = plt.get_cmap("tab20").colors
-    color_cycle = itertools.cycle(colors)
 
     bottom = [0] * len(labels)
     for comp in components_order:
         vals = stack_values[comp]
-        color = next(color_cycle)
+        color = get_color_for_component(comp)
         ax.bar(x, vals, bottom=bottom, color=color, label=comp, edgecolor='white', width=0.7)
         bottom = [bottom[i] + vals[i] for i in range(len(bottom))]
 
@@ -234,7 +252,7 @@ def main():
     entries = load_entries()
     labels, rows, components_order = build_table(entries)
     totals, stack_values, missing_flags = totals_and_stacks(labels, rows, components_order)
-    plot_and_save(labels, totals, stack_values, components_order, missing_flags)
+    plot_and_save(labels, totals, stack_values, components_order)
 
 
 if __name__ == "__main__":

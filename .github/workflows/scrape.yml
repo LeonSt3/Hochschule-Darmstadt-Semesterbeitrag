@@ -41,7 +41,7 @@ jobs:
 
       - name: Generate plot image if data changed
         if: ${{ steps.git_status.outputs.changes != '' }}
-        run: python main.py
+        run: python generate_plot.py
 
       - name: Commit and push changes (JSON + PNG)
         if: ${{ steps.git_status.outputs.changes != '' }}
