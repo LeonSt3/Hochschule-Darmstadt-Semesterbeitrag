@@ -4,7 +4,7 @@
     "fetched_at": "",
     "semester": "Sommersemester 2008",
     "total": "Sommersemester 2008: 709,50 €",
-    "total_value": 709.50,
+    "total_value": 709.5,
     "items": [
       {
         "name": "Studiengebühren",
@@ -23,9 +23,9 @@
     "fetched_at": "",
     "semester": "Wintersemester 2008/2009",
     "total": "Wintersemester 2008/2009: 209,50 €",
-    "total_value": 209.50,
+    "total_value": 209.5,
     "items": [
-       {
+      {
         "name": "Keine Aufschlüsselung verfügbar",
         "amount": "209,50 €",
         "value": 209.5
@@ -37,9 +37,9 @@
     "fetched_at": "",
     "semester": "Sommersemester 2009",
     "total": "Sommersemester 2009: 213,50 €",
-    "total_value": 213.50,
+    "total_value": 213.5,
     "items": [
-       {
+      {
         "name": "Keine Aufschlüsselung verfügbar",
         "amount": "213,50 €",
         "value": 213.5
@@ -51,9 +51,9 @@
     "fetched_at": "",
     "semester": "Wintersemester 2009/2010",
     "total": "Wintersemester 2009/2010: 213,50 €",
-    "total_value": 213.50,
+    "total_value": 213.5,
     "items": [
-       {
+      {
         "name": "Keine Aufschlüsselung verfügbar",
         "amount": "213,50 €",
         "value": 213.5
@@ -67,7 +67,7 @@
     "total": "Sommersemester 2010: 231,00 €",
     "total_value": 231.0,
     "items": [
-       {
+      {
         "name": "Keine Aufschlüsselung verfügbar",
         "amount": "231,00 €",
         "value": 231.0
@@ -81,7 +81,7 @@
     "total": "Wintersemester 2010/2011: 231,00 €",
     "total_value": 231.0,
     "items": [
-       {
+      {
         "name": "Keine Aufschlüsselung verfügbar",
         "amount": "231,00 €",
         "value": 231.0
@@ -95,7 +95,7 @@
     "total": "Sommersemester 2011: 231,00 €",
     "total_value": 231.0,
     "items": [
-       {
+      {
         "name": "Keine Aufschlüsselung verfügbar",
         "amount": "231,00 €",
         "value": 231.0
@@ -109,7 +109,7 @@
     "total": "Wintersemester 2011/2012: 238,00 €",
     "total_value": 238.0,
     "items": [
-       {
+      {
         "name": "Keine Aufschlüsselung verfügbar",
         "amount": "238,00 €",
         "value": 238.0
@@ -123,7 +123,7 @@
     "total": "Sommersemester 2013: 247,00 €",
     "total_value": 247.0,
     "items": [
-       {
+      {
         "name": "Keine Aufschlüsselung verfügbar",
         "amount": "247,00 €",
         "value": 247.0
@@ -137,7 +137,7 @@
     "total": "Sommersemester 2013: 247,00 €",
     "total_value": 247.0,
     "items": [
-       {
+      {
         "name": "Keine Aufschlüsselung verfügbar",
         "amount": "247,00 €",
         "value": 247.0
@@ -151,7 +151,7 @@
     "total": "Sommersemester 2013: 253,00 €",
     "total_value": 253.0,
     "items": [
-       {
+      {
         "name": "Keine Aufschlüsselung verfügbar",
         "amount": "253,00 €",
         "value": 253.0
@@ -252,7 +252,7 @@
     "total": "Sommersemester 2015: 263,00 €",
     "total_value": 263.0,
     "items": [
-       {
+      {
         "name": "Keine Aufschlüsselung verfügbar",
         "amount": "263,00 €",
         "value": 253.0
@@ -985,6 +985,45 @@
         "name": "Studierendenschaftsbeitrag",
         "amount": "14,51 €",
         "value": 14.51
+      },
+      {
+        "name": "Verwaltungskostenbeitrag*",
+        "amount": "50,00 €",
+        "value": 50.0
+      },
+      {
+        "name": "bundesweites Semesterticket",
+        "amount": "208,80 €",
+        "value": 208.8
+      },
+      {
+        "name": "Leihfahrradsystem",
+        "amount": "2,98 €",
+        "value": 2.98
+      }
+    ]
+  },
+  {
+    "source": "https://h-da.de/studium/studienorganisation/semesterbeitrag",
+    "fetched_at": "2026-01-08T14:07:07.116443Z",
+    "semester": "Sommersemester 2026",
+    "total": "Sommersemester 2026: 383 €",
+    "total_value": 383.0,
+    "items": [
+      {
+        "name": "Studierendenwerksbeitrag",
+        "amount": "103,00 €",
+        "value": 103.0
+      },
+      {
+        "name": "Kulturticket",
+        "amount": "2,71 €",
+        "value": 2.71
+      },
+      {
+        "name": "Studierendenschaftsbeitrag",
+        "amount": "15,51 €",
+        "value": 15.51
       },
       {
         "name": "Verwaltungskostenbeitrag*",
