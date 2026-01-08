@@ -1,36 +1,162 @@
 [
   {
-    "fehlt": "SoSe2008"
+    "source": "https://h-da.de/fileadmin/h_da/Studium/Studienorganisation/Dokumente/UEbersicht_der_Semesterbeitraege_HP.pdf",
+    "fetched_at": "",
+    "semester": "Sommersemester 2008",
+    "total": "Sommersemester 2008: 709,50 €",
+    "total_value": 709.50,
+    "items": [
+      {
+        "name": "Studiengebühren",
+        "amount": "500,00 €",
+        "value": 500.0
+      },
+      {
+        "name": "Keine Aufschlüsselung verfügbar",
+        "amount": "209,50 €",
+        "value": 209.5
+      }
+    ]
   },
   {
-    "fehlt": "WiSe2008/2009"
+    "source": "https://h-da.de/fileadmin/h_da/Studium/Studienorganisation/Dokumente/UEbersicht_der_Semesterbeitraege_HP.pdf",
+    "fetched_at": "",
+    "semester": "Wintersemester 2008/2009",
+    "total": "Wintersemester 2008/2009: 209,50 €",
+    "total_value": 209.50,
+    "items": [
+       {
+        "name": "Keine Aufschlüsselung verfügbar",
+        "amount": "209,50 €",
+        "value": 209.5
+      }
+    ]
   },
   {
-    "fehlt": "SoSe2009"
+    "source": "https://h-da.de/fileadmin/h_da/Studium/Studienorganisation/Dokumente/UEbersicht_der_Semesterbeitraege_HP.pdf",
+    "fetched_at": "",
+    "semester": "Sommersemester 2009",
+    "total": "Sommersemester 2009: 213,50 €",
+    "total_value": 213.50,
+    "items": [
+       {
+        "name": "Keine Aufschlüsselung verfügbar",
+        "amount": "213,50 €",
+        "value": 213.5
+      }
+    ]
   },
   {
-    "fehlt": "WiSe2009/2010"
+    "source": "https://h-da.de/fileadmin/h_da/Studium/Studienorganisation/Dokumente/UEbersicht_der_Semesterbeitraege_HP.pdf",
+    "fetched_at": "",
+    "semester": "Wintersemester 2009/2010",
+    "total": "Wintersemester 2009/2010: 213,50 €",
+    "total_value": 213.50,
+    "items": [
+       {
+        "name": "Keine Aufschlüsselung verfügbar",
+        "amount": "213,50 €",
+        "value": 213.5
+      }
+    ]
   },
   {
-    "fehlt": "SoSe2010"
+    "source": "https://h-da.de/fileadmin/h_da/Studium/Studienorganisation/Dokumente/UEbersicht_der_Semesterbeitraege_HP.pdf",
+    "fetched_at": "",
+    "semester": "Sommersemester 2010",
+    "total": "Sommersemester 2010: 231,00 €",
+    "total_value": 231.0,
+    "items": [
+       {
+        "name": "Keine Aufschlüsselung verfügbar",
+        "amount": "231,00 €",
+        "value": 231.0
+      }
+    ]
   },
   {
-    "fehlt": "WiSe2010/2011"
+    "source": "https://h-da.de/fileadmin/h_da/Studium/Studienorganisation/Dokumente/UEbersicht_der_Semesterbeitraege_HP.pdf",
+    "fetched_at": "",
+    "semester": "Wintersemester 2010/2011",
+    "total": "Wintersemester 2010/2011: 231,00 €",
+    "total_value": 231.0,
+    "items": [
+       {
+        "name": "Keine Aufschlüsselung verfügbar",
+        "amount": "231,00 €",
+        "value": 231.0
+      }
+    ]
   },
   {
-    "fehlt": "SoSe2011"
+    "source": "https://h-da.de/fileadmin/h_da/Studium/Studienorganisation/Dokumente/UEbersicht_der_Semesterbeitraege_HP.pdf",
+    "fetched_at": "",
+    "semester": "Sommersemester 2011",
+    "total": "Sommersemester 2011: 231,00 €",
+    "total_value": 231.0,
+    "items": [
+       {
+        "name": "Keine Aufschlüsselung verfügbar",
+        "amount": "231,00 €",
+        "value": 231.0
+      }
+    ]
   },
   {
-    "fehlt": "WiSe2011/2012"
+    "source": "https://h-da.de/fileadmin/h_da/Studium/Studienorganisation/Dokumente/UEbersicht_der_Semesterbeitraege_HP.pdf",
+    "fetched_at": "",
+    "semester": "Wintersemester 2011/2012",
+    "total": "Wintersemester 2011/2012: 238,00 €",
+    "total_value": 238.0,
+    "items": [
+       {
+        "name": "Keine Aufschlüsselung verfügbar",
+        "amount": "238,00 €",
+        "value": 238.0
+      }
+    ]
   },
   {
-    "fehlt": "SoSe2012"
+    "source": "https://h-da.de/fileadmin/h_da/Studium/Studienorganisation/Dokumente/UEbersicht_der_Semesterbeitraege_HP.pdf",
+    "fetched_at": "",
+    "semester": "Sommersemester 2012",
+    "total": "Sommersemester 2013: 247,00 €",
+    "total_value": 247.0,
+    "items": [
+       {
+        "name": "Keine Aufschlüsselung verfügbar",
+        "amount": "247,00 €",
+        "value": 247.0
+      }
+    ]
   },
   {
-    "fehlt": "WiSe2012/2013"
+    "source": "https://h-da.de/fileadmin/h_da/Studium/Studienorganisation/Dokumente/UEbersicht_der_Semesterbeitraege_HP.pdf",
+    "fetched_at": "",
+    "semester": "Wintersemester 2012/2013",
+    "total": "Sommersemester 2013: 247,00 €",
+    "total_value": 247.0,
+    "items": [
+       {
+        "name": "Keine Aufschlüsselung verfügbar",
+        "amount": "247,00 €",
+        "value": 247.0
+      }
+    ]
   },
   {
-    "fehlt": "SoSe2013"
+    "source": "https://h-da.de/fileadmin/h_da/Studium/Studienorganisation/Dokumente/UEbersicht_der_Semesterbeitraege_HP.pdf",
+    "fetched_at": "",
+    "semester": "Sommersemester 2013",
+    "total": "Sommersemester 2013: 253,00 €",
+    "total_value": 253.0,
+    "items": [
+       {
+        "name": "Keine Aufschlüsselung verfügbar",
+        "amount": "253,00 €",
+        "value": 253.0
+      }
+    ]
   },
   {
     "source": "https://web.archive.org/web/20130925122409/http://www.h-da.de/studium/studienorganisation/semesterbeitrag",
@@ -120,7 +246,18 @@
     ]
   },
   {
-    "fehlt": "SoSe2015"
+    "source": "https://h-da.de/fileadmin/h_da/Studium/Studienorganisation/Dokumente/UEbersicht_der_Semesterbeitraege_HP.pdf",
+    "fetched_at": "",
+    "semester": "Sommersemester 2015",
+    "total": "Sommersemester 2015: 263,00 €",
+    "total_value": 263.0,
+    "items": [
+       {
+        "name": "Keine Aufschlüsselung verfügbar",
+        "amount": "263,00 €",
+        "value": 253.0
+      }
+    ]
   },
   {
     "source": "https://web.archive.org/web/20151007013403/https://www.h-da.de/studium/studienorganisation/semesterbeitrag/",
