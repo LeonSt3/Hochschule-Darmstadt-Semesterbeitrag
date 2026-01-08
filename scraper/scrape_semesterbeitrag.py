@@ -1,11 +1,11 @@
-import requests
-from bs4 import BeautifulSoup
 import json
 import os
-from datetime import datetime
 import re
 import sys
-import unicodedata
+from datetime import datetime
+
+import requests
+from bs4 import BeautifulSoup
 
 URL = "https://h-da.de/studium/studienorganisation/semesterbeitrag"
 OUT_DIR = os.path.join(os.path.dirname(__file__), "..", "data")
@@ -30,7 +30,7 @@ def amount_to_number(text):
     num = m.group(0).strip().replace(".", "").replace(",", ".")
     try:
         return float(num)
-    except:
+    except Exception:
         return None
 
 
@@ -76,25 +76,8 @@ def parse(html):
     return result
 
 
-def slugify(text):
-    if not text:
-        return "unknown"
-    text = unicodedata.normalize("NFKD", text)
-    text = text.encode("ascii", "ignore").decode("ascii")
-    text = re.sub(r"[^\w\s-]", "", text).strip().lower()
-    text = re.sub(r"[-\s]+", "-", text)
-    return text
-
-
 def save(result):
     os.makedirs(OUT_DIR, exist_ok=True)
-
-    def normalize(obj):
-        # entferne volatile Felder bevor verglichen wird
-        n = dict(obj)
-        n.pop("fetched_at", None)
-        n.pop("source", None)
-        return n
 
     def semester_key(s):
         # einfache Normalisierung des Semester-Labels für den Vergleich
@@ -110,7 +93,7 @@ def save(result):
         try:
             with open(HISTORY_PATH, "r", encoding="utf-8") as f:
                 history = json.load(f)
-        except:
+        except (OSError, json.JSONDecodeError):
             history = []
 
     # Baue Set existierender Semester-Keys (nur Einträge mit 'semester')
@@ -124,32 +107,17 @@ def save(result):
 
     # Wenn das Semester bereits in history existiert -> skip (keine doppelte Semester-Zeile)
     if result_sem and result_sem in existing_semesters:
-        # Falls der letzte Eintrag exakt dieselbe fetched_at hat, behandeln wir das ebenfalls als kein append.
-        last = history[-1] if history else None
-        if last and last.get("fetched_at") == result.get("fetched_at"):
-            # bereits vollständig vorhanden
-            print("Eintrag übersprungen: Semester bereits in history (identischer fetched_at).")
-            return False
-        # Semester schon vorhanden -> nicht erneut anhängen
         print("Eintrag übersprungen: Semester '{}' bereits in history.".format(result.get("semester")))
         return False
 
-    last = history[-1] if history else None
-
-    # Wenn es keinen letzten Eintrag gibt -> anhängen
-    # Wenn der letzte Eintrag denselben fetched_at hat -> skip
-    # Sonst das rohe Ergebnis anhängen
-    if not last or last.get("fetched_at") != result.get("fetched_at"):
-        history.append(result)
-        try:
-            with open(HISTORY_PATH, "w", encoding="utf-8") as f:
-                json.dump(history, f, ensure_ascii=False, indent=2)
-            changed_any = True
-        except Exception as e:
-            print("Fehler beim Schreiben von history.json:", e, file=sys.stderr)
-    else:
-        # fetched_at ist identisch -> keine neue History-Zeile
-        pass
+    # Neues oder unbekanntes Semester -> immer anhängen
+    history.append(result)
+    try:
+        with open(HISTORY_PATH, "w", encoding="utf-8") as f:
+            json.dump(history, f, ensure_ascii=False, indent=2)
+        changed_any = True
+    except Exception as e:
+        print("Fehler beim Schreiben von history.json:", e, file=sys.stderr)
 
     return changed_any
 

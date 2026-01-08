@@ -1,8 +1,9 @@
-import os
 import json
+import os
 import re
-import matplotlib.pyplot as plt
 from datetime import datetime
+
+import matplotlib.pyplot as plt
 
 OUT_DIR = os.path.join(os.path.dirname(__file__), "data")
 HISTORY_PATH = os.path.join(OUT_DIR, "history.json")
@@ -30,7 +31,7 @@ def get_color_for_component(name: str):
         return COMPONENT_COLORS[name]
     except KeyError:
         raise KeyError(f"Unbekannte Komponente ohne definierte Farbe: {name!r}. "
-                       f"Bitte eine Farbe in COMPONENT_COLORS hinterlegen.")  # bewusstes Abbrechen
+                       f"Bitte eine Farbe in COMPONENT_COLORS hinterlegen.")
 
 
 def safe_num(v):
