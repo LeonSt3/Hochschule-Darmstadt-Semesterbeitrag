@@ -69,24 +69,10 @@ def build_table(entries):
     # entries: list of parsed results from scraper, newest last
     labels = []
     rows = []
-    components_order = []
-    # determine a sensible order from the latest entry if present
-    if entries:
-        latest = entries[-1]
-        if latest.get("items"):
-            seen = set()
-            ordered = []
-            for it in latest["items"]:
-                nm = it.get("name")
-                if not nm:
-                    continue
-                can = normalize_name(nm)
-                if can not in seen:
-                    seen.add(can)
-                    ordered.append(can)
-            components_order = ordered
-    # fallback: build union of components
     all_names = set()
+    # Sammle numerische Werte pro Komponente zur Statistik
+    values_map = {}
+
     for e in entries:
         name = e.get("semester") or e.get("total") or e.get("fetched_at") or datetime.utcnow().isoformat()
         labels.append(name)
@@ -108,10 +94,32 @@ def build_table(entries):
                     comp_map[canonical] = v
                 else:
                     comp_map[canonical] = prev + v
+                # für Statistik speichern (nur echte numerische Beiträge)
+                values_map.setdefault(canonical, []).append(v)
             all_names.add(canonical)
         rows.append({"label": name, "comps": comp_map, "raw": e})
-    if not components_order:
-        components_order = sorted([n for n in all_names if n], key=lambda x: x.lower())
+
+    # Bestimme Komponentenreihenfolge anhand von Stabilität (Varianz) und Häufigkeit
+    components_order = []
+    if all_names:
+        total_rows = max(1, len(rows))
+        stats = []
+        for nm in all_names:
+            vals = values_map.get(nm, [])
+            n = len(vals)
+            if n > 0:
+                mean = sum(vals) / n
+                var = sum((x - mean) ** 2 for x in vals) / n  # Populationsvarianz
+                freq = n / total_rows
+            else:
+                var = float("inf")  # selten/nie numerisch angegeben -> ans Ende
+                freq = 0.0
+            stats.append((nm, var, freq))
+        # Sortierung: niedrige Varianz zuerst (stabil), dann höhere Häufigkeit, dann Name
+        components_order = [t[0] for t in sorted(stats, key=lambda t: (t[1], -t[2], t[0].lower()))]
+    else:
+        components_order = []
+
     return labels, rows, components_order
 
 
