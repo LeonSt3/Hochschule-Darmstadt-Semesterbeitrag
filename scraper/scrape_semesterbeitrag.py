@@ -36,7 +36,7 @@ def amount_to_number(text):
 
 def parse(html):
     soup = BeautifulSoup(html, "html.parser")
-    result = {"source": URL, "fetched_at": datetime.now(datetime.UTC).isoformat() + "Z", "semester": None,
+    result = {"source": URL, "fetched_at": datetime.utcnow().isoformat() + "Z", "semester": None,
               "total": None, "total_value": None, "items": []}
 
     # Suche nach Überschrift "Betrag" und direkt folgendes h3 (z.B. "Sommersemester 2026: 383 €")
