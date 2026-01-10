@@ -241,31 +241,54 @@ def plot_and_save(labels, totals, stack_values, components_order):
     ax.set_xticklabels(labels, rotation=25, ha="right", fontsize=8)
     ax.set_ylabel("Euro")
     ax.set_title("Zusammensetzung Semesterbeitrag (gestapelt)")
-    ax.legend(title="Komponenten", bbox_to_anchor=(1.02, 1), loc="upper left", fontsize=8)
 
     fig = plt.gcf()
-    has_footer = False
+    has_ss24 = any("Sommersemester 2024" in str(lbl) for lbl in labels)
 
-    # Sehr kurze Fußnote, falls Sommersemester 2024 im Plot ist
-    if any("Sommersemester 2024" in str(lbl) for lbl in labels):
-        has_footer = True
-        footer_text = "Hinweis: Ab Sommersemester 2024 RMV-Semesterticket → Deutschlandticket."
-        fig.subplots_adjust(bottom=0.24)
+    # Legendenlabels ggf. mit Sternchen versehen (nur Legende, nicht Daten/Stack)
+    handles, leg_labels = ax.get_legend_handles_labels()
+    if has_ss24:
+        leg_labels = [("Semesterticket*" if l == "Semesterticket" else l) for l in leg_labels]
+
+    # etwas mehr Platz rechts für Legende + Hinweis
+    fig.subplots_adjust(right=0.78, bottom=0.16)  # <- bottom erhöht (war 0.10)
+
+    # Haupt-Legende (Komponenten) rechts oben
+    legend_main = ax.legend(
+        handles,
+        leg_labels,
+        title="Komponenten",
+        bbox_to_anchor=(1.02, 1),
+        loc="upper left",
+        fontsize=8,
+        borderaxespad=0.0,
+    )
+    ax.add_artist(legend_main)
+
+    # Hinweis als Textbox direkt unterhalb der Komponenten-Legende (an Legenden-Box gekoppelt)
+    if has_ss24:
+        fig.canvas.draw()  # benötigt, damit legend_main eine korrekte bbox hat
+        bbox_fig = legend_main.get_window_extent(fig.canvas.get_renderer()).transformed(fig.transFigure.inverted())
+
         fig.text(
-            0.10,
-            0.04,
-            footer_text,
+            bbox_fig.x0,  # links bündig zur Legende
+            max(0.01, bbox_fig.y0 - 0.02),  # knapp darunter; clamp gegen negativ
+            "* Ab SoSe 2024: RMV-Semesterticket → Deutschlandticket",
             ha="left",
-            va="bottom",
+            va="top",
             fontsize=7,
+            bbox={"facecolor": "white", "alpha": 0.9, "pad": 2, "edgecolor": "#dddddd"},
         )
 
-    # Nur ohne Footer tight_layout, damit der Text nicht wieder hochgeschoben wird
-    if not has_footer:
-        plt.tight_layout()
+    # kein tight_layout, damit die manuelle Platzierung nicht verschoben wird
 
     os.makedirs(OUT_DIR, exist_ok=True)
-    plt.savefig(PNG_PATH, dpi=150)
+    plt.savefig(
+        PNG_PATH,
+        dpi=150,
+        bbox_inches="tight",  # <- verhindert Abschneiden (unten/rechts)
+        pad_inches=0.15,  # <- kleiner Sicherheitsrand
+    )
     plt.close()
     print("Plot gespeichert:", PNG_PATH)
 
