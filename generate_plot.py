@@ -92,7 +92,6 @@ def build_table(entries):
     labels = []
     rows = []
     all_names = set()
-    # Sammle numerische Werte pro Komponente zur Statistik
     values_map = {}
 
     for e in entries:
@@ -195,7 +194,8 @@ def plot_and_save(labels, totals, stack_values, components_order):
     known_totals = [t for t in totals if t is not None and t > 0]
     max_known = max(known_totals) if known_totals else 1.0
 
-    plt.figure(figsize=(max(10, len(labels) * 0.45), 6))
+    # etwas mehr Platz nach unten für Fußnote
+    plt.figure(figsize=(max(10, len(labels) * 0.45), 7.0))
     ax = plt.gca()
 
     bottom = [0] * len(labels)
@@ -242,7 +242,28 @@ def plot_and_save(labels, totals, stack_values, components_order):
     ax.set_ylabel("Euro")
     ax.set_title("Zusammensetzung Semesterbeitrag (gestapelt)")
     ax.legend(title="Komponenten", bbox_to_anchor=(1.02, 1), loc="upper left", fontsize=8)
-    plt.tight_layout()
+
+    fig = plt.gcf()
+    has_footer = False
+
+    # Sehr kurze Fußnote, falls Sommersemester 2024 im Plot ist
+    if any("Sommersemester 2024" in str(lbl) for lbl in labels):
+        has_footer = True
+        footer_text = "Hinweis: Ab Sommersemester 2024 RMV-Semesterticket → Deutschlandticket."
+        fig.subplots_adjust(bottom=0.24)
+        fig.text(
+            0.10,
+            0.04,
+            footer_text,
+            ha="left",
+            va="bottom",
+            fontsize=7,
+        )
+
+    # Nur ohne Footer tight_layout, damit der Text nicht wieder hochgeschoben wird
+    if not has_footer:
+        plt.tight_layout()
+
     os.makedirs(OUT_DIR, exist_ok=True)
     plt.savefig(PNG_PATH, dpi=150)
     plt.close()
