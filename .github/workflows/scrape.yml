@@ -43,6 +43,10 @@ jobs:
         if: ${{ steps.git_status.outputs.changes != '' }}
         run: python generate_plot.py
 
+      - name: Run tests (gatekeeper) if data changed
+        if: ${{ steps.git_status.outputs.changes != '' }}
+        run: pytest -q
+
       - name: Commit and push changes (JSON + PNG)
         if: ${{ steps.git_status.outputs.changes != '' }}
         run: |

@@ -12,5 +12,6 @@
 
 - Die Grafik wird automatisch durch die Pipeline aktuell gehalten; ältere Aufteilungen des Semesterbeitrags stammen aus
   archive.org.
+- Nach gemeldeten fehlerhaften Einträgen wurden Validierungs-Tests ergänzt.
 - Teile dieses Repos wurden mit KI-gestützten Tools erstellt.
 - Gerne Issues oder Pull Requests einreichen
