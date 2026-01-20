@@ -15,3 +15,19 @@
 - Nach gemeldeten fehlerhaften Einträgen wurden Validierungs-Tests ergänzt.
 - Teile dieses Repos wurden mit KI-gestützten Tools erstellt.
 - Gerne Issues oder Pull Requests einreichen
+
+Funfact 1:
+Im Sommersemester 2008 war der Semesterbeitrag kurzzeitig günstiger.
+Möglicherweise wegen einer fehlenden Erhöhung.
+697,50 €
+https://web.archive.org/web/20071210160236/http://www.h-da.de/studium/information-und-beratung/semesterbeitrag/index.htm
+709,50 €
+https://web.archive.org/web/20080303161704/http://www.h-da.de/studium/information-und-beratung/semesterbeitrag/index.htm
+
+Funfact 2:
+Langzeitstudienbeiträge in Wintersemester 2007/2008 und Sommersemester 2008:
+Studierende, die erstmals oder erneut Langzeitstudienbeiträge zahlen mussten, zahlten zusätzlich zum Semesterbeitrag von
+209,50 € einen Betrag von 500 €, 700 € oder 900 €.
+
+Funfact 3:
+Ab dem Sommersemester 2010 wurde die Säumnisgebühr von 15 € auf 30 € erhöht.

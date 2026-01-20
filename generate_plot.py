@@ -11,6 +11,9 @@ PNG_PATH = os.path.join(OUT_DIR, "semester_plot.png")
 
 EPSILON = 1e-9
 
+# zusätzlicher Parameter: Abstandsfaktor zwischen Balken (1.0 = dicht nebeneinander)
+BAR_SPACING = 1.4
+
 COMPONENT_COLORS = {
     # Hauptelemente mit Aufschlüsselung
     "Semesterticket": "#f00c0c",  # rot
@@ -65,13 +68,16 @@ def normalize_name(name: str) -> str:
     # Verwaltungskostenbeitrag mit/ohne * vereinheitlichen
     if "verwaltungskosten" in n:
         return "Verwaltungskostenbeitrag"
-    # Studierendenschaft / Studierendenwerksbeitrag etc.
-    if "studierendenwerks" in n:
+    # Studierendenwerksbeitrag / Studentenwerk vereinheitlichen
+    if "studierendenwerk" in n or "studentenwerk" in n:
         return "Studierendenwerksbeitrag"
-    if "studierendenschaft" in n:
+    # Studierendenschaft / AStA / Theaterticket -> einheitlich als Studierendenschaftsbeitrag
+    if "studierendenschaft" in n or "asta" in n or "theaterticket" in n:
         return "Studierendenschaftsbeitrag"
     if "kulturticket" in n:
         return "Kulturticket"
+    if "studiengebühren" in n or "studiengebuehren" in n:
+        return "Studiengebühren"
     # Standard: trim und Title-Case
     return name.strip()
 
@@ -179,30 +185,33 @@ def format_euro(v):
     try:
         # Wenn Wert praktisch ganzzahlig ist, ohne Nachkommastellen anzeigen
         if abs(v - round(v)) < EPSILON:
-            return f"{int(round(v))} €"
+            return f"{int(round(v))}€"
         # Sonst mit zwei Nachkommastellen
-        return f"{v:.2f} €"
+        return f"{v:.2f}€"
     except Exception:
-        return f"{v} €"
+        return f"{v}€"
 
 
 def plot_and_save(labels, totals, stack_values, components_order):
     if not labels:
         print("Keine Daten zum Plotten gefunden.")
         return
-    x = list(range(len(labels)))
+    # x-Positionen mit Abstandsfaktor skalieren, damit Labels nicht ineinander buggen
+    x = [i * BAR_SPACING for i in range(len(labels))]
     known_totals = [t for t in totals if t is not None and t > 0]
     max_known = max(known_totals) if known_totals else 1.0
 
-    # etwas mehr Platz nach unten für Fußnote
-    plt.figure(figsize=(max(10, len(labels) * 0.45), 7.0))
+    # Figurbreite proportional zur Anzahl der Labels und zum Abstandsfaktor
+    fig_width = max(10, len(labels) * 0.45 * BAR_SPACING)
+    plt.figure(figsize=(fig_width, 7.0))
     ax = plt.gca()
 
     bottom = [0] * len(labels)
+    bar_width = 0.65 * BAR_SPACING
     for comp in components_order:
         vals = stack_values[comp]
         color = get_color_for_component(comp)
-        ax.bar(x, vals, bottom=bottom, color=color, label=comp, edgecolor='white', width=0.7)
+        ax.bar(x, vals, bottom=bottom, color=color, label=comp, edgecolor='white', width=bar_width)
         bottom = [bottom[i] + vals[i] for i in range(len(bottom))]
 
     # ensure y-limits leave space for annotations
@@ -213,7 +222,7 @@ def plot_and_save(labels, totals, stack_values, components_order):
     for i, lbl in enumerate(labels):
         if totals[i] is not None:
             ax.text(
-                i,
+                x[i],
                 totals[i] + top_value * 0.02,
                 format_euro(totals[i]),
                 ha="center",
@@ -224,9 +233,10 @@ def plot_and_save(labels, totals, stack_values, components_order):
             )
         else:
             placeholder_height = top_value * 0.03
-            ax.bar(i, placeholder_height, color="#eeeeee", edgecolor="#999999", hatch='//', width=0.7, zorder=5)
+            ax.bar(x[i], placeholder_height, color="#eeeeee", edgecolor="#999999", hatch='//', width=bar_width,
+                   zorder=5)
             ax.text(
-                i,
+                x[i],
                 placeholder_height + top_value * 0.02,
                 "n.a.",
                 ha="center",
@@ -238,7 +248,7 @@ def plot_and_save(labels, totals, stack_values, components_order):
             )
 
     ax.set_xticks(x)
-    ax.set_xticklabels(labels, rotation=25, ha="right", fontsize=8)
+    ax.set_xticklabels(labels, rotation=30, ha="right", fontsize=8)
     ax.set_ylabel("Euro")
     ax.set_title("Zusammensetzung Semesterbeitrag (gestapelt)")
 
