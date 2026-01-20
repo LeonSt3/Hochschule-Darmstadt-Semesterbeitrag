@@ -19,13 +19,14 @@
 #### Funfacts:
 
 ##### Funfact 1:
-Im Sommersemester 2008 war der Semesterbeitrag kurzzeitig günstiger.
-Möglicherweise wegen einer fehlenden Erhöhung.
 
-- 697,50 €
-https://web.archive.org/web/20071210160236/http://www.h-da.de/studium/information-und-beratung/semesterbeitrag/index.htm
-- 709,50 €
-https://web.archive.org/web/20080303161704/http://www.h-da.de/studium/information-und-beratung/semesterbeitrag/index.htm
+Im Sommersemester 2008 war der Semesterbeitrag kurzzeitig niedriger \(**697,50 €**\).
+Vermutlich wurde auf der Website zunächst nur der Semestertitel aktualisiert, der Betrag aber noch nicht angepasst.
+
+- Sommersemester 2008: **697,50 €**
+  https://web.archive.org/web/20071210160236/http://www.h-da.de/studium/information-und-beratung/semesterbeitrag/index.htm
+- Sommersemester 2008 später : **709,50 €**  
+  https://web.archive.org/web/20080303161704/http://www.h-da.de/studium/information-und-beratung/semesterbeitrag/index.htm
 
 ##### Funfact 2:
 Langzeitstudienbeiträge in Wintersemester 2007/2008 und Sommersemester 2008:
