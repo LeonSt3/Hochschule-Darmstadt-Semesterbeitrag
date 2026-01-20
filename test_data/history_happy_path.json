@@ -1,98 +1,6 @@
 [
   {
-    "source": "https://web.archive.org/web/20160613100057if_/https://www.h-da.de/fileadmin/h_da/Studium/Studienorganisation/UEbersicht_der_Semesterbeitraege_.pdf",
-    "fetched_at": "",
-    "semester": "Sommersemester 2006",
-    "total": "Sommersemester 2006: 193,00 €",
-    "total_value": 193.0,
-    "items": [
-      {
-        "name": "Keine Aufschlüsselung verfügbar",
-        "amount": "193,00 €",
-        "value": 193.0
-      }
-    ]
-  },
-  {
-    "source": "https://web.archive.org/web/20160613100057if_/https://www.h-da.de/fileadmin/h_da/Studium/Studienorganisation/UEbersicht_der_Semesterbeitraege_.pdf",
-    "fetched_at": "",
-    "semester": "Wintersemester 2006/2007",
-    "total": "Wintersemester 2006/2007: 193,00 €",
-    "total_value": 193.0,
-    "items": [
-      {
-        "name": "Keine Aufschlüsselung verfügbar",
-        "amount": "193,00 €",
-        "value": 193.0
-      }
-    ]
-  },
-  {
-    "source": "https://web.archive.org/web/20070209114459/http://www.h-da.de/studium/information-und-beratung/semesterbeitrag/index.htm",
-    "fetched_at": "",
-    "semester": "Sommersemester 2007",
-    "total": "Sommersemester 2007: 197,50 €",
-    "total_value": 197.5,
-    "items": [
-      {
-        "name": "Studentenwerk",
-        "amount": "57,00 €",
-        "value": 57.0
-      },
-      {
-        "name": "AStA & Theaterticket",
-        "amount": "12,32 €",
-        "value": 12.32
-      },
-      {
-        "name": "RMV-Semesterticket",
-        "amount": "78,18 €",
-        "value": 78.18
-      },
-      {
-        "name": "Verwaltungskostenbeitrag",
-        "amount": "50,00 €",
-        "value": 50.0
-      }
-    ]
-  },
-  {
-    "source": "https://web.archive.org/web/20070812155337/http://www.h-da.de/studium/information-und-beratung/semesterbeitrag/index.htm",
-    "fetched_at": "",
-    "semester": "Wintersemester 2007/2008",
-    "total": "Wintersemester 2007/2008: 697,50 €",
-    "total_value": 697.5,
-    "note": "Vom 16. Juli bis zum 24. August 2007 können Sie sich für das Wintersemester 2007/2008 mit dem Gesamtbetrag von 697,50 Euro zurück melden.",
-    "items": [
-      {
-        "name": "Studiengebühren",
-        "amount": "500,00 €",
-        "value": 500.0
-      },
-      {
-        "name": "Studentenwerk",
-        "amount": "57,00 €",
-        "value": 57.0
-      },
-      {
-        "name": "AStA & Theaterticket",
-        "amount": "12,32 €",
-        "value": 12.32
-      },
-      {
-        "name": "RMV-Semesterticket",
-        "amount": "78,18 €",
-        "value": 78.18
-      },
-      {
-        "name": "Verwaltungskostenbeitrag",
-        "amount": "50,00 €",
-        "value": 50.0
-      }
-    ]
-  },
-  {
-    "source": "https://web.archive.org/web/20071210160236/http://www.h-da.de/studium/information-und-beratung/semesterbeitrag/index.htm",
+    "source": "https://h-da.de/fileadmin/h_da/Studium/Studienorganisation/Dokumente/UEbersicht_der_Semesterbeitraege_HP.pdf",
     "fetched_at": "",
     "semester": "Sommersemester 2008",
     "total": "Sommersemester 2008: 709,50 €",
@@ -104,232 +12,107 @@
         "value": 500.0
       },
       {
-        "name": "Studentenwerk",
-        "amount": "65,00 €",
-        "value": 65.0
-      },
-      {
-        "name": "AStA & Theaterticket",
-        "amount": "13,26 €",
-        "value": 13.26
-      },
-      {
-        "name": "RMV-Semesterticket",
-        "amount": "81,24 €",
-        "value": 81.24
-      },
-      {
-        "name": "Verwaltungskostenbeitrag",
-        "amount": "50,00 €",
-        "value": 50.0
+        "name": "Keine Aufschlüsselung verfügbar",
+        "amount": "209,50 €",
+        "value": 209.5
       }
     ]
   },
   {
-    "source": "https://web.archive.org/web/20080713044500/http://www.h-da.de/studium/information-und-beratung/semesterbeitrag/index.htm",
+    "source": "https://h-da.de/fileadmin/h_da/Studium/Studienorganisation/Dokumente/UEbersicht_der_Semesterbeitraege_HP.pdf",
     "fetched_at": "",
     "semester": "Wintersemester 2008/2009",
     "total": "Wintersemester 2008/2009: 209,50 €",
     "total_value": 209.5,
     "items": [
       {
-        "name": "Studentenwerk",
-        "amount": "65,00 €",
-        "value": 65.0
-      },
-      {
-        "name": "AStA & Theaterticket",
-        "amount": "13,26 €",
-        "value": 13.26
-      },
-      {
-        "name": "RMV-Semesterticket",
-        "amount": "81,24 €",
-        "value": 81.24
-      },
-      {
-        "name": "Verwaltungskostenbeitrag",
-        "amount": "50,00 €",
-        "value": 50.0
+        "name": "Keine Aufschlüsselung verfügbar",
+        "amount": "209,50 €",
+        "value": 209.5
       }
     ]
   },
   {
-    "source": "https://web.archive.org/web/20090123215831/http://www.h-da.de/studium/information-und-beratung/semesterbeitrag/index.htm",
+    "source": "https://h-da.de/fileadmin/h_da/Studium/Studienorganisation/Dokumente/UEbersicht_der_Semesterbeitraege_HP.pdf",
     "fetched_at": "",
     "semester": "Sommersemester 2009",
     "total": "Sommersemester 2009: 213,50 €",
     "total_value": 213.5,
     "items": [
       {
-        "name": "Studentenwerk",
-        "amount": "65,00 €",
-        "value": 65.0
-      },
-      {
-        "name": "AStA & Theaterticket",
-        "amount": "13,70 €",
-        "value": 13.7
-      },
-      {
-        "name": "RMV-Semesterticket",
-        "amount": "84,80 €",
-        "value": 84.8
-      },
-      {
-        "name": "Verwaltungskostenbeitrag",
-        "amount": "50,00 €",
-        "value": 50.0
+        "name": "Keine Aufschlüsselung verfügbar",
+        "amount": "213,50 €",
+        "value": 213.5
       }
     ]
   },
   {
-    "source": "https://web.archive.org/web/20090607223346/http://www.h-da.de/studium/information-und-beratung/semesterbeitrag/index.htm",
+    "source": "https://h-da.de/fileadmin/h_da/Studium/Studienorganisation/Dokumente/UEbersicht_der_Semesterbeitraege_HP.pdf",
     "fetched_at": "",
     "semester": "Wintersemester 2009/2010",
     "total": "Wintersemester 2009/2010: 213,50 €",
     "total_value": 213.5,
-    "note": "Vom 24.06. - 05.08.2009 können Sie sich für das Wintersemester 2009/10 mit dem Gesamtbetrag von 213,50 Euro zurück melden.",
     "items": [
       {
-        "name": "Studentenwerk",
-        "amount": "65,00 €",
-        "value": 65.0
-      },
-      {
-        "name": "AStA & Theaterticket",
-        "amount": "13,70 €",
-        "value": 13.7
-      },
-      {
-        "name": "RMV-Semesterticket",
-        "amount": "84,80 €",
-        "value": 84.8
-      },
-      {
-        "name": "Verwaltungskostenbeitrag",
-        "amount": "50,00 €",
-        "value": 50.0
+        "name": "Keine Aufschlüsselung verfügbar",
+        "amount": "213,50 €",
+        "value": 213.5
       }
     ]
   },
   {
-    "source": "https://web.archive.org/web/20100121054822/http://www.h-da.de/studium/information-und-beratung/semesterbeitrag/index.htm",
+    "source": "https://h-da.de/fileadmin/h_da/Studium/Studienorganisation/Dokumente/UEbersicht_der_Semesterbeitraege_HP.pdf",
     "fetched_at": "",
     "semester": "Sommersemester 2010",
     "total": "Sommersemester 2010: 231,00 €",
     "total_value": 231.0,
-    "note": "Vom 13.01. - 24.02.2010 können Sie sich für das Sommersemester 2010 mit dem Gesamtbetrag von 231,00 Euro zurück melden.",
     "items": [
       {
-        "name": "Studentenwerk",
-        "amount": "80,00 €",
-        "value": 80.0
-      },
-      {
-        "name": "AStA & Theaterticket",
-        "amount": "13,64 €",
-        "value": 13.64
-      },
-      {
-        "name": "RMV-Semesterticket",
-        "amount": "87,36 €",
-        "value": 87.36
-      },
-      {
-        "name": "Verwaltungskostenbeitrag",
-        "amount": "50,00 €",
-        "value": 50.0
+        "name": "Keine Aufschlüsselung verfügbar",
+        "amount": "231,00 €",
+        "value": 231.0
       }
     ]
   },
   {
-    "source": "https://web.archive.org/web/20100924134847/http://www.h-da.de/studium/information-und-beratung/semesterbeitrag/index.htm",
+    "source": "https://h-da.de/fileadmin/h_da/Studium/Studienorganisation/Dokumente/UEbersicht_der_Semesterbeitraege_HP.pdf",
     "fetched_at": "",
     "semester": "Wintersemester 2010/2011",
     "total": "Wintersemester 2010/2011: 231,00 €",
     "total_value": 231.0,
-    "note": "Vom 23.06. - 04.08.2010 können Sie sich für das Wintersemester 2010/11 mit dem Gesamtbetrag von 231,00 Euro zurück melden.",
     "items": [
       {
-        "name": "Studentenwerk",
-        "amount": "80,00 €",
-        "value": 80.0
-      },
-      {
-        "name": "AStA & Theaterticket",
-        "amount": "13,64 €",
-        "value": 13.64
-      },
-      {
-        "name": "RMV-Semesterticket",
-        "amount": "87,36 €",
-        "value": 87.36
-      },
-      {
-        "name": "Verwaltungskostenbeitrag",
-        "amount": "50,00 €",
-        "value": 50.0
+        "name": "Keine Aufschlüsselung verfügbar",
+        "amount": "231,00 €",
+        "value": 231.0
       }
     ]
   },
   {
-    "source": "https://web.archive.org/web/20110401213340/http://www.h-da.de/studium/information-und-beratung/semesterbeitrag/index.htm",
+    "source": "https://h-da.de/fileadmin/h_da/Studium/Studienorganisation/Dokumente/UEbersicht_der_Semesterbeitraege_HP.pdf",
     "fetched_at": "",
     "semester": "Sommersemester 2011",
-    "total": "Sommersemester 2011: 238,50 €",
-    "total_value": 238.5,
-    "note": "Vom 12.01. - 23.02.2011 können Sie sich für das Sommersemester 2011 mit dem Gesamtbetrag von 238,50 Euro zurück melden.",
+    "total": "Sommersemester 2011: 231,00 €",
+    "total_value": 231.0,
     "items": [
       {
-        "name": "Studentenwerk",
-        "amount": "80,00 €",
-        "value": 80.0
-      },
-      {
-        "name": "AStA & Theaterticket",
-        "amount": "13,50 €",
-        "value": 13.5
-      },
-      {
-        "name": "RMV-Semesterticket",
-        "amount": "95,00 €",
-        "value": 95.0
-      },
-      {
-        "name": "Verwaltungskostenbeitrag",
-        "amount": "50,00 €",
-        "value": 50.0
+        "name": "Keine Aufschlüsselung verfügbar",
+        "amount": "231,00 €",
+        "value": 231.0
       }
     ]
   },
   {
-    "source": "https://web.archive.org/web/20111207003037/http://www.h-da.de/studium/information-und-beratung/semesterbeitrag/index.htm",
+    "source": "https://h-da.de/fileadmin/h_da/Studium/Studienorganisation/Dokumente/UEbersicht_der_Semesterbeitraege_HP.pdf",
     "fetched_at": "",
     "semester": "Wintersemester 2011/2012",
-    "total": "Wintersemester 2011/2012: 238,50 €",
-    "total_value": 238.5,
-    "note": "Vom 22.06. - 03.08.2011 können Sie sich für das Wintersemester 2011/2012 mit dem Gesamtbetrag von 238,50 Euro zurück melden. Die Bezahlung der Semesterbeiträge (auch die Säumnisgebühr) ist ausschließlich per Überweisung möglich!",
+    "total": "Wintersemester 2011/2012: 238,00 €",
+    "total_value": 238.0,
     "items": [
       {
-        "name": "Studentenwerk",
-        "amount": "80,00 €",
-        "value": 80.0
-      },
-      {
-        "name": "AStA & Theaterticket",
-        "amount": "13,50 €",
-        "value": 13.5
-      },
-      {
-        "name": "RMV-Semesterticket",
-        "amount": "95,00 €",
-        "value": 95.0
-      },
-      {
-        "name": "Verwaltungskostenbeitrag",
-        "amount": "50,00 €",
-        "value": 50.0
+        "name": "Keine Aufschlüsselung verfügbar",
+        "amount": "238,00 €",
+        "value": 238.0
       }
     ]
   },
@@ -348,32 +131,16 @@
     ]
   },
   {
-    "source": "https://web.archive.org/web/20120804024740/http://www.h-da.de/studium/information-und-beratung/semesterbeitrag/index.htm",
+    "source": "https://h-da.de/fileadmin/h_da/Studium/Studienorganisation/Dokumente/UEbersicht_der_Semesterbeitraege_HP.pdf",
     "fetched_at": "",
     "semester": "Wintersemester 2012/2013",
     "total": "Wintersemester 2012/2013: 247,00 €",
     "total_value": 247.0,
-    "note": "Vom 20. Juni - 08. August 2012 können Sie sich für das Wintersemester 2012/13 mit dem Gesamtbetrag von 247,00 Euro zurück melden. Die Bezahlung der Semesterbeiträge (auch die Säumnisgebühr) ist ausschließlich per Überweisung möglich!",
     "items": [
       {
-        "name": "Studentenwerk",
-        "amount": "80,00 €",
-        "value": 80.0
-      },
-      {
-        "name": "AStA & Theaterticket",
-        "amount": "13,00 €",
-        "value": 13.0
-      },
-      {
-        "name": "RMV-Semesterticket",
-        "amount": "104,00 €",
-        "value": 104.0
-      },
-      {
-        "name": "Verwaltungskostenbeitrag",
-        "amount": "50,00 €",
-        "value": 50.0
+        "name": "Keine Aufschlüsselung verfügbar",
+        "amount": "247,00 €",
+        "value": 247.0
       }
     ]
   },
