@@ -146,6 +146,11 @@ def build_table(entries):
     else:
         components_order = []
 
+    # Sicherstellen, dass "Studiengebühren" (falls vorhanden) zuletzt steht,
+    # damit diese Komponente im gestapelten Plot oben sichtbar ist.
+    if "Studiengebühren" in components_order:
+        components_order = [c for c in components_order if c != "Studiengebühren"] + ["Studiengebühren"]
+
     return labels, rows, components_order
 
 
