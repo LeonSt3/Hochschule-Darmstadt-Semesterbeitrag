@@ -8,16 +8,7 @@
   - `data/history.json` — Zeitreihe
   - `data/semester_plot.png` — generierte Visualisierung
 
-#### Hinweise:
-
-- Die Grafik wird automatisch durch die Pipeline aktuell gehalten; ältere Aufteilungen des Semesterbeitrags stammen aus
-  archive.org.
-- Nach gemeldeten fehlerhaften Einträgen wurden Validierungs-Tests ergänzt.
-- Teile dieses Repos wurden mit KI-gestützten Tools erstellt.
-- Gerne Issues oder Pull Requests einreichen
-
 #### Funfacts:
-
 ##### Funfact 1:
 
 Im Sommersemester 2008 war der Semesterbeitrag kurzzeitig niedriger \(**697,50 €**\).
@@ -35,3 +26,22 @@ Studierende, die erstmals oder erneut Langzeitstudienbeiträge zahlen mussten, z
 
 ##### Funfact 3:
 Ab dem Sommersemester 2010 wurde die Säumnisgebühr von 15 € auf 30 € erhöht.
+
+##### Funfact 4:
+
+Für das Sommersemester 2011 gibt es widersprüchliche Angaben: In der älteren PDF (und im Website\-Archiv) werden *
+*238,50 €** genannt, in einer neueren PDF\-Version **231,00 €**.
+Für die Zeitreihe verwenden wir **238,50 €**, da dieser Betrag sowohl im Website\-Archiv als auch in der älteren PDF
+erscheint (vermutlich handelt es sich bei **231,00 €** um einen Übertragungsfehler).
+
+Quelle \(Webarchiv\):
+
+- https://web.archive.org/web/20110122093155/http://www.h-da.de/studium/information-und-beratung/semesterbeitrag/index.htm
+
+#### Hinweise:
+
+- Die Grafik wird automatisch durch die Pipeline aktuell gehalten; ältere Aufteilungen des Semesterbeitrags stammen aus
+  archive.org.
+- Nach gemeldeten fehlerhaften Einträgen wurden Validierungs-Tests ergänzt.
+- Teile dieses Repos wurden mit KI-gestützten Tools erstellt.
+- Gerne Issues oder Pull Requests einreichen
